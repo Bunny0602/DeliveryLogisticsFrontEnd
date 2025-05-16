@@ -12,9 +12,13 @@ namespace DeliveryLogisticsSystem
 {
     public partial class PersonnelDashboardForm : Form
     {
-        public PersonnelDashboardForm()
+
+        private string userId;
+
+        public PersonnelDashboardForm(string userId)
         {
             InitializeComponent();
+            this.userId = userId;
         }
     }
 }

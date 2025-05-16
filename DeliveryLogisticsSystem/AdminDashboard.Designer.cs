@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -54,9 +55,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabUser = new System.Windows.Forms.TabPage();
             this.dataUser = new System.Windows.Forms.DataGridView();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.btnDeleteUser = new System.Windows.Forms.PictureBox();
+            this.UserRefresh = new System.Windows.Forms.PictureBox();
+            this.btnViewUser = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.tabPersonnel = new System.Windows.Forms.TabPage();
@@ -64,18 +65,18 @@
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.PersonnelRefresh = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.tabOrder = new System.Windows.Forms.TabPage();
+            this.dataOrder = new System.Windows.Forms.DataGridView();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.dataOrder = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
@@ -87,25 +88,25 @@
             this.tabControl1.SuspendLayout();
             this.tabUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserRefresh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnViewUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.tabPersonnel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonnel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PersonnelRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.tabOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -362,9 +363,9 @@
             // 
             this.tabUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
             this.tabUser.Controls.Add(this.dataUser);
-            this.tabUser.Controls.Add(this.pictureBox10);
-            this.tabUser.Controls.Add(this.pictureBox9);
-            this.tabUser.Controls.Add(this.pictureBox7);
+            this.tabUser.Controls.Add(this.btnDeleteUser);
+            this.tabUser.Controls.Add(this.UserRefresh);
+            this.tabUser.Controls.Add(this.btnViewUser);
             this.tabUser.Controls.Add(this.textBox2);
             this.tabUser.Controls.Add(this.pictureBox8);
             this.tabUser.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
@@ -377,6 +378,8 @@
             // 
             // dataUser
             // 
+            this.dataUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataUser.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataUser.BackgroundColor = System.Drawing.Color.White;
             this.dataUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataUser.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -385,6 +388,14 @@
             this.dataUser.MinimumSize = new System.Drawing.Size(816, 343);
             this.dataUser.Name = "dataUser";
             this.dataUser.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataUser.RowHeadersVisible = false;
             this.dataUser.RowHeadersWidth = 62;
             this.dataUser.RowTemplate.Height = 28;
@@ -392,38 +403,44 @@
             this.dataUser.Size = new System.Drawing.Size(816, 343);
             this.dataUser.TabIndex = 8;
             // 
-            // pictureBox10
+            // btnDeleteUser
             // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(714, 15);
-            this.pictureBox10.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox10.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox10.TabIndex = 7;
-            this.pictureBox10.TabStop = false;
+            this.btnDeleteUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteUser.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteUser.Image")));
+            this.btnDeleteUser.Location = new System.Drawing.Point(714, 15);
+            this.btnDeleteUser.MaximumSize = new System.Drawing.Size(28, 28);
+            this.btnDeleteUser.MinimumSize = new System.Drawing.Size(28, 28);
+            this.btnDeleteUser.Name = "btnDeleteUser";
+            this.btnDeleteUser.Size = new System.Drawing.Size(28, 28);
+            this.btnDeleteUser.TabIndex = 7;
+            this.btnDeleteUser.TabStop = false;
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
-            // pictureBox9
+            // UserRefresh
             // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(757, 15);
-            this.pictureBox9.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox9.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox9.TabIndex = 6;
-            this.pictureBox9.TabStop = false;
+            this.UserRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UserRefresh.Image = ((System.Drawing.Image)(resources.GetObject("UserRefresh.Image")));
+            this.UserRefresh.Location = new System.Drawing.Point(757, 15);
+            this.UserRefresh.MaximumSize = new System.Drawing.Size(28, 28);
+            this.UserRefresh.MinimumSize = new System.Drawing.Size(28, 28);
+            this.UserRefresh.Name = "UserRefresh";
+            this.UserRefresh.Size = new System.Drawing.Size(28, 28);
+            this.UserRefresh.TabIndex = 6;
+            this.UserRefresh.TabStop = false;
+            this.UserRefresh.Click += new System.EventHandler(this.UserRefresh_Click);
             // 
-            // pictureBox7
+            // btnViewUser
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(671, 15);
-            this.pictureBox7.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox7.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox7.TabIndex = 5;
-            this.pictureBox7.TabStop = false;
+            this.btnViewUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewUser.Image = ((System.Drawing.Image)(resources.GetObject("btnViewUser.Image")));
+            this.btnViewUser.Location = new System.Drawing.Point(671, 15);
+            this.btnViewUser.MaximumSize = new System.Drawing.Size(28, 28);
+            this.btnViewUser.MinimumSize = new System.Drawing.Size(28, 28);
+            this.btnViewUser.Name = "btnViewUser";
+            this.btnViewUser.Size = new System.Drawing.Size(28, 28);
+            this.btnViewUser.TabIndex = 5;
+            this.btnViewUser.TabStop = false;
+            this.btnViewUser.Click += new System.EventHandler(this.btnViewUser_Click);
             // 
             // textBox2
             // 
@@ -453,7 +470,7 @@
             this.tabPersonnel.Controls.Add(this.pictureBox16);
             this.tabPersonnel.Controls.Add(this.pictureBox15);
             this.tabPersonnel.Controls.Add(this.pictureBox11);
-            this.tabPersonnel.Controls.Add(this.pictureBox12);
+            this.tabPersonnel.Controls.Add(this.PersonnelRefresh);
             this.tabPersonnel.Controls.Add(this.pictureBox13);
             this.tabPersonnel.Controls.Add(this.textBox3);
             this.tabPersonnel.Controls.Add(this.pictureBox14);
@@ -467,6 +484,8 @@
             // 
             // dataPersonnel
             // 
+            this.dataPersonnel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataPersonnel.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataPersonnel.BackgroundColor = System.Drawing.Color.White;
             this.dataPersonnel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataPersonnel.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -515,16 +534,17 @@
             this.pictureBox11.TabIndex = 12;
             this.pictureBox11.TabStop = false;
             // 
-            // pictureBox12
+            // PersonnelRefresh
             // 
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(757, 15);
-            this.pictureBox12.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox12.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox12.TabIndex = 11;
-            this.pictureBox12.TabStop = false;
+            this.PersonnelRefresh.Image = ((System.Drawing.Image)(resources.GetObject("PersonnelRefresh.Image")));
+            this.PersonnelRefresh.Location = new System.Drawing.Point(757, 15);
+            this.PersonnelRefresh.MaximumSize = new System.Drawing.Size(28, 28);
+            this.PersonnelRefresh.MinimumSize = new System.Drawing.Size(28, 28);
+            this.PersonnelRefresh.Name = "PersonnelRefresh";
+            this.PersonnelRefresh.Size = new System.Drawing.Size(28, 28);
+            this.PersonnelRefresh.TabIndex = 11;
+            this.PersonnelRefresh.TabStop = false;
+            this.PersonnelRefresh.Click += new System.EventHandler(this.PersonnelRefresh_Click);
             // 
             // pictureBox13
             // 
@@ -574,6 +594,23 @@
             this.tabOrder.Size = new System.Drawing.Size(822, 392);
             this.tabOrder.TabIndex = 2;
             this.tabOrder.Text = "Order";
+            // 
+            // dataOrder
+            // 
+            this.dataOrder.BackgroundColor = System.Drawing.Color.White;
+            this.dataOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataOrder.Location = new System.Drawing.Point(3, 46);
+            this.dataOrder.MaximumSize = new System.Drawing.Size(816, 343);
+            this.dataOrder.MinimumSize = new System.Drawing.Size(816, 343);
+            this.dataOrder.Name = "dataOrder";
+            this.dataOrder.ReadOnly = true;
+            this.dataOrder.RowHeadersVisible = false;
+            this.dataOrder.RowHeadersWidth = 62;
+            this.dataOrder.RowTemplate.Height = 28;
+            this.dataOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataOrder.Size = new System.Drawing.Size(816, 343);
+            this.dataOrder.TabIndex = 7;
+            this.dataOrder.TabStop = false;
             // 
             // pictureBox19
             // 
@@ -642,23 +679,6 @@
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
-            // dataOrder
-            // 
-            this.dataOrder.BackgroundColor = System.Drawing.Color.White;
-            this.dataOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataOrder.Location = new System.Drawing.Point(3, 46);
-            this.dataOrder.MaximumSize = new System.Drawing.Size(816, 343);
-            this.dataOrder.MinimumSize = new System.Drawing.Size(816, 343);
-            this.dataOrder.Name = "dataOrder";
-            this.dataOrder.ReadOnly = true;
-            this.dataOrder.RowHeadersVisible = false;
-            this.dataOrder.RowHeadersWidth = 62;
-            this.dataOrder.RowTemplate.Height = 28;
-            this.dataOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataOrder.Size = new System.Drawing.Size(816, 343);
-            this.dataOrder.TabIndex = 7;
-            this.dataOrder.TabStop = false;
-            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 12F);
@@ -692,9 +712,9 @@
             this.tabUser.ResumeLayout(false);
             this.tabUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserRefresh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnViewUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.tabPersonnel.ResumeLayout(false);
             this.tabPersonnel.PerformLayout();
@@ -702,16 +722,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PersonnelRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.tabOrder.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataOrder)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -746,14 +766,13 @@
         private System.Windows.Forms.TabPage tabOrder;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox btnDeleteUser;
+        private System.Windows.Forms.PictureBox UserRefresh;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.DataGridView dataUser;
         private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox PersonnelRefresh;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.PictureBox pictureBox14;
@@ -765,5 +784,6 @@
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.DataGridView dataOrder;
+        private System.Windows.Forms.PictureBox btnViewUser;
     }
 }

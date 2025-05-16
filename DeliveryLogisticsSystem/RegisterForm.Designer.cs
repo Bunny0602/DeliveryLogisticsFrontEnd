@@ -42,6 +42,8 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.linkLogin = new System.Windows.Forms.LinkLabel();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.showPassword = new System.Windows.Forms.CheckBox();
             this.inputPhone = new System.Windows.Forms.TextBox();
@@ -88,8 +90,6 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.linkLogin = new System.Windows.Forms.LinkLabel();
-            this.label5 = new System.Windows.Forms.Label();
             panel6 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -290,6 +290,29 @@
             this.panel12.Size = new System.Drawing.Size(606, 452);
             this.panel12.TabIndex = 17;
             // 
+            // linkLogin
+            // 
+            this.linkLogin.AutoSize = true;
+            this.linkLogin.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.linkLogin.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLogin.Location = new System.Drawing.Point(371, 415);
+            this.linkLogin.Name = "linkLogin";
+            this.linkLogin.Size = new System.Drawing.Size(46, 20);
+            this.linkLogin.TabIndex = 47;
+            this.linkLogin.TabStop = true;
+            this.linkLogin.Text = "Login";
+            this.linkLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogin_LinkClicked);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(199, 415);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(178, 20);
+            this.label5.TabIndex = 46;
+            this.label5.Text = "Already have an account?";
+            // 
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(119)))), ((int)(((byte)(67)))));
@@ -303,6 +326,7 @@
             this.btnRegister.TabIndex = 45;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // showPassword
             // 
@@ -314,6 +338,7 @@
             this.showPassword.TabIndex = 44;
             this.showPassword.Text = "Show Password";
             this.showPassword.UseVisualStyleBackColor = true;
+            this.showPassword.CheckedChanged += new System.EventHandler(this.showPassword_CheckedChanged);
             // 
             // inputPhone
             // 
@@ -355,6 +380,7 @@
             this.inputPass.MaximumSize = new System.Drawing.Size(300, 30);
             this.inputPass.MinimumSize = new System.Drawing.Size(300, 30);
             this.inputPass.Name = "inputPass";
+            this.inputPass.PasswordChar = '*';
             this.inputPass.Size = new System.Drawing.Size(300, 27);
             this.inputPass.TabIndex = 40;
             // 
@@ -811,28 +837,6 @@
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(10, 10);
             this.panel15.TabIndex = 11;
-            // 
-            // linkLogin
-            // 
-            this.linkLogin.AutoSize = true;
-            this.linkLogin.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.linkLogin.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLogin.Location = new System.Drawing.Point(371, 415);
-            this.linkLogin.Name = "linkLogin";
-            this.linkLogin.Size = new System.Drawing.Size(46, 20);
-            this.linkLogin.TabIndex = 47;
-            this.linkLogin.TabStop = true;
-            this.linkLogin.Text = "Login";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(199, 415);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(178, 20);
-            this.label5.TabIndex = 46;
-            this.label5.Text = "Already have an account?";
             // 
             // RegisterForm
             // 
