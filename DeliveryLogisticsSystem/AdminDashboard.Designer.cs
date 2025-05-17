@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -62,11 +62,11 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.tabPersonnel = new System.Windows.Forms.TabPage();
             this.dataPersonnel = new System.Windows.Forms.DataGridView();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.btnEditPersonnel = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.btnDeletePersonnel = new System.Windows.Forms.PictureBox();
             this.PersonnelRefresh = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.btnViewPersonnel = new System.Windows.Forms.PictureBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.tabOrder = new System.Windows.Forms.TabPage();
@@ -94,11 +94,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.tabPersonnel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonnel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditPersonnel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeletePersonnel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonnelRefresh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnViewPersonnel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.tabOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataOrder)).BeginInit();
@@ -158,6 +158,7 @@
             this.btnCreateOrder.TabIndex = 2;
             this.btnCreateOrder.Text = "Create Order";
             this.btnCreateOrder.UseVisualStyleBackColor = false;
+            this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
             // 
             // panel5
             // 
@@ -388,14 +389,14 @@
             this.dataUser.MinimumSize = new System.Drawing.Size(816, 343);
             this.dataUser.Name = "dataUser";
             this.dataUser.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataUser.RowHeadersVisible = false;
             this.dataUser.RowHeadersWidth = 62;
             this.dataUser.RowTemplate.Height = 28;
@@ -467,11 +468,11 @@
             // 
             this.tabPersonnel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
             this.tabPersonnel.Controls.Add(this.dataPersonnel);
-            this.tabPersonnel.Controls.Add(this.pictureBox16);
+            this.tabPersonnel.Controls.Add(this.btnEditPersonnel);
             this.tabPersonnel.Controls.Add(this.pictureBox15);
-            this.tabPersonnel.Controls.Add(this.pictureBox11);
+            this.tabPersonnel.Controls.Add(this.btnDeletePersonnel);
             this.tabPersonnel.Controls.Add(this.PersonnelRefresh);
-            this.tabPersonnel.Controls.Add(this.pictureBox13);
+            this.tabPersonnel.Controls.Add(this.btnViewPersonnel);
             this.tabPersonnel.Controls.Add(this.textBox3);
             this.tabPersonnel.Controls.Add(this.pictureBox14);
             this.tabPersonnel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
@@ -501,19 +502,22 @@
             this.dataPersonnel.Size = new System.Drawing.Size(816, 343);
             this.dataPersonnel.TabIndex = 15;
             // 
-            // pictureBox16
+            // btnEditPersonnel
             // 
-            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(714, 15);
-            this.pictureBox16.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox16.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox16.TabIndex = 14;
-            this.pictureBox16.TabStop = false;
+            this.btnEditPersonnel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditPersonnel.Image = ((System.Drawing.Image)(resources.GetObject("btnEditPersonnel.Image")));
+            this.btnEditPersonnel.Location = new System.Drawing.Point(714, 15);
+            this.btnEditPersonnel.MaximumSize = new System.Drawing.Size(28, 28);
+            this.btnEditPersonnel.MinimumSize = new System.Drawing.Size(28, 28);
+            this.btnEditPersonnel.Name = "btnEditPersonnel";
+            this.btnEditPersonnel.Size = new System.Drawing.Size(28, 28);
+            this.btnEditPersonnel.TabIndex = 14;
+            this.btnEditPersonnel.TabStop = false;
+            this.btnEditPersonnel.Click += new System.EventHandler(this.btnEditPersonnel_Click);
             // 
             // pictureBox15
             // 
+            this.pictureBox15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
             this.pictureBox15.Location = new System.Drawing.Point(628, 15);
             this.pictureBox15.MaximumSize = new System.Drawing.Size(28, 28);
@@ -522,17 +526,20 @@
             this.pictureBox15.Size = new System.Drawing.Size(28, 28);
             this.pictureBox15.TabIndex = 13;
             this.pictureBox15.TabStop = false;
+            this.pictureBox15.Click += new System.EventHandler(this.pictureBox15_Click);
             // 
-            // pictureBox11
+            // btnDeletePersonnel
             // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(671, 15);
-            this.pictureBox11.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox11.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox11.TabIndex = 12;
-            this.pictureBox11.TabStop = false;
+            this.btnDeletePersonnel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeletePersonnel.Image = ((System.Drawing.Image)(resources.GetObject("btnDeletePersonnel.Image")));
+            this.btnDeletePersonnel.Location = new System.Drawing.Point(671, 15);
+            this.btnDeletePersonnel.MaximumSize = new System.Drawing.Size(28, 28);
+            this.btnDeletePersonnel.MinimumSize = new System.Drawing.Size(28, 28);
+            this.btnDeletePersonnel.Name = "btnDeletePersonnel";
+            this.btnDeletePersonnel.Size = new System.Drawing.Size(28, 28);
+            this.btnDeletePersonnel.TabIndex = 12;
+            this.btnDeletePersonnel.TabStop = false;
+            this.btnDeletePersonnel.Click += new System.EventHandler(this.btnDeletePersonnel_Click);
             // 
             // PersonnelRefresh
             // 
@@ -546,16 +553,18 @@
             this.PersonnelRefresh.TabStop = false;
             this.PersonnelRefresh.Click += new System.EventHandler(this.PersonnelRefresh_Click);
             // 
-            // pictureBox13
+            // btnViewPersonnel
             // 
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(585, 15);
-            this.pictureBox13.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox13.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox13.TabIndex = 10;
-            this.pictureBox13.TabStop = false;
+            this.btnViewPersonnel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewPersonnel.Image = ((System.Drawing.Image)(resources.GetObject("btnViewPersonnel.Image")));
+            this.btnViewPersonnel.Location = new System.Drawing.Point(585, 15);
+            this.btnViewPersonnel.MaximumSize = new System.Drawing.Size(28, 28);
+            this.btnViewPersonnel.MinimumSize = new System.Drawing.Size(28, 28);
+            this.btnViewPersonnel.Name = "btnViewPersonnel";
+            this.btnViewPersonnel.Size = new System.Drawing.Size(28, 28);
+            this.btnViewPersonnel.TabIndex = 10;
+            this.btnViewPersonnel.TabStop = false;
+            this.btnViewPersonnel.Click += new System.EventHandler(this.btnViewPersonnel_Click);
             // 
             // textBox3
             // 
@@ -719,11 +728,11 @@
             this.tabPersonnel.ResumeLayout(false);
             this.tabPersonnel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonnel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditPersonnel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeletePersonnel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonnelRefresh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnViewPersonnel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.tabOrder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataOrder)).EndInit();
@@ -771,13 +780,13 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.DataGridView dataUser;
-        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox btnDeletePersonnel;
         private System.Windows.Forms.PictureBox PersonnelRefresh;
-        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox btnViewPersonnel;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.DataGridView dataPersonnel;
-        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.PictureBox btnEditPersonnel;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox19;

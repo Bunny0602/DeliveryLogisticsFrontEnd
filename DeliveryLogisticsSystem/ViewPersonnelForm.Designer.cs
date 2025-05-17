@@ -40,27 +40,27 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtRole = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.PersonnelProfileImage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btnBack = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PersonnelProfileImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -172,21 +172,21 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(233)))));
-            this.panel7.Controls.Add(this.textBox6);
+            this.panel7.Controls.Add(this.txtStatus);
             this.panel7.Controls.Add(this.label8);
-            this.panel7.Controls.Add(this.textBox5);
+            this.panel7.Controls.Add(this.txtRole);
             this.panel7.Controls.Add(this.label7);
-            this.panel7.Controls.Add(this.textBox4);
-            this.panel7.Controls.Add(this.textBox3);
-            this.panel7.Controls.Add(this.textBox2);
-            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.txtAddress);
+            this.panel7.Controls.Add(this.txtPhone);
+            this.panel7.Controls.Add(this.txtFullName);
+            this.panel7.Controls.Add(this.txtEmail);
             this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.label4);
             this.panel7.Controls.Add(this.label3);
             this.panel7.Controls.Add(this.label2);
-            this.panel7.Controls.Add(this.guna2CirclePictureBox1);
-            this.panel7.Controls.Add(this.pictureBox2);
+            this.panel7.Controls.Add(this.PersonnelProfileImage);
+            this.panel7.Controls.Add(this.btnBack);
             this.panel7.Location = new System.Drawing.Point(345, 143);
             this.panel7.MaximumSize = new System.Drawing.Size(810, 424);
             this.panel7.MinimumSize = new System.Drawing.Size(810, 424);
@@ -194,19 +194,19 @@
             this.panel7.Size = new System.Drawing.Size(810, 424);
             this.panel7.TabIndex = 5;
             // 
-            // textBox6
+            // txtStatus
             // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(439, 249);
-            this.textBox6.MaximumSize = new System.Drawing.Size(300, 27);
-            this.textBox6.MinimumSize = new System.Drawing.Size(300, 27);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(300, 27);
-            this.textBox6.TabIndex = 15;
+            this.txtStatus.BackColor = System.Drawing.Color.White;
+            this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStatus.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(439, 249);
+            this.txtStatus.MaximumSize = new System.Drawing.Size(300, 27);
+            this.txtStatus.MinimumSize = new System.Drawing.Size(300, 27);
+            this.txtStatus.Multiline = true;
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.ReadOnly = true;
+            this.txtStatus.Size = new System.Drawing.Size(300, 27);
+            this.txtStatus.TabIndex = 15;
             // 
             // label8
             // 
@@ -219,19 +219,19 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Status";
             // 
-            // textBox5
+            // txtRole
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(439, 202);
-            this.textBox5.MaximumSize = new System.Drawing.Size(300, 27);
-            this.textBox5.MinimumSize = new System.Drawing.Size(300, 27);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(300, 27);
-            this.textBox5.TabIndex = 13;
+            this.txtRole.BackColor = System.Drawing.Color.White;
+            this.txtRole.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRole.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtRole.Location = new System.Drawing.Point(439, 202);
+            this.txtRole.MaximumSize = new System.Drawing.Size(300, 27);
+            this.txtRole.MinimumSize = new System.Drawing.Size(300, 27);
+            this.txtRole.Multiline = true;
+            this.txtRole.Name = "txtRole";
+            this.txtRole.ReadOnly = true;
+            this.txtRole.Size = new System.Drawing.Size(300, 27);
+            this.txtRole.TabIndex = 13;
             // 
             // label7
             // 
@@ -244,61 +244,61 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Role";
             // 
-            // textBox4
+            // txtAddress
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(439, 296);
-            this.textBox4.MaximumSize = new System.Drawing.Size(300, 100);
-            this.textBox4.MinimumSize = new System.Drawing.Size(300, 100);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(300, 100);
-            this.textBox4.TabIndex = 11;
+            this.txtAddress.BackColor = System.Drawing.Color.White;
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(439, 296);
+            this.txtAddress.MaximumSize = new System.Drawing.Size(300, 100);
+            this.txtAddress.MinimumSize = new System.Drawing.Size(300, 100);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ReadOnly = true;
+            this.txtAddress.Size = new System.Drawing.Size(300, 100);
+            this.txtAddress.TabIndex = 11;
             // 
-            // textBox3
+            // txtPhone
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(439, 155);
-            this.textBox3.MaximumSize = new System.Drawing.Size(300, 27);
-            this.textBox3.MinimumSize = new System.Drawing.Size(300, 27);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(300, 27);
-            this.textBox3.TabIndex = 10;
+            this.txtPhone.BackColor = System.Drawing.Color.White;
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(439, 155);
+            this.txtPhone.MaximumSize = new System.Drawing.Size(300, 27);
+            this.txtPhone.MinimumSize = new System.Drawing.Size(300, 27);
+            this.txtPhone.Multiline = true;
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.ReadOnly = true;
+            this.txtPhone.Size = new System.Drawing.Size(300, 27);
+            this.txtPhone.TabIndex = 10;
             // 
-            // textBox2
+            // txtFullName
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(439, 107);
-            this.textBox2.MaximumSize = new System.Drawing.Size(300, 27);
-            this.textBox2.MinimumSize = new System.Drawing.Size(300, 27);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(300, 27);
-            this.textBox2.TabIndex = 9;
+            this.txtFullName.BackColor = System.Drawing.Color.White;
+            this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtFullName.Location = new System.Drawing.Point(439, 107);
+            this.txtFullName.MaximumSize = new System.Drawing.Size(300, 27);
+            this.txtFullName.MinimumSize = new System.Drawing.Size(300, 27);
+            this.txtFullName.Multiline = true;
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.ReadOnly = true;
+            this.txtFullName.Size = new System.Drawing.Size(300, 27);
+            this.txtFullName.TabIndex = 9;
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(439, 60);
-            this.textBox1.MaximumSize = new System.Drawing.Size(300, 27);
-            this.textBox1.MinimumSize = new System.Drawing.Size(300, 27);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(300, 27);
-            this.textBox1.TabIndex = 8;
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(439, 60);
+            this.txtEmail.MaximumSize = new System.Drawing.Size(300, 27);
+            this.txtEmail.MinimumSize = new System.Drawing.Size(300, 27);
+            this.txtEmail.Multiline = true;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(300, 27);
+            this.txtEmail.TabIndex = 8;
             // 
             // label6
             // 
@@ -355,29 +355,31 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Profile";
             // 
-            // guna2CirclePictureBox1
+            // PersonnelProfileImage
             // 
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(15, 87);
-            this.guna2CirclePictureBox1.MaximumSize = new System.Drawing.Size(200, 200);
-            this.guna2CirclePictureBox1.MinimumSize = new System.Drawing.Size(200, 200);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 1;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.PersonnelProfileImage.ImageRotate = 0F;
+            this.PersonnelProfileImage.Location = new System.Drawing.Point(15, 87);
+            this.PersonnelProfileImage.MaximumSize = new System.Drawing.Size(200, 200);
+            this.PersonnelProfileImage.MinimumSize = new System.Drawing.Size(200, 200);
+            this.PersonnelProfileImage.Name = "PersonnelProfileImage";
+            this.PersonnelProfileImage.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.PersonnelProfileImage.Size = new System.Drawing.Size(200, 200);
+            this.PersonnelProfileImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PersonnelProfileImage.TabIndex = 1;
+            this.PersonnelProfileImage.TabStop = false;
             // 
-            // pictureBox2
+            // btnBack
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(15, 10);
-            this.pictureBox2.MaximumSize = new System.Drawing.Size(35, 35);
-            this.pictureBox2.MinimumSize = new System.Drawing.Size(35, 35);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(15, 10);
+            this.btnBack.MaximumSize = new System.Drawing.Size(35, 35);
+            this.btnBack.MinimumSize = new System.Drawing.Size(35, 35);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(35, 35);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // label1
             // 
@@ -410,8 +412,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PersonnelProfileImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,21 +432,21 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtFullName;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox PersonnelProfileImage;
+        private System.Windows.Forms.PictureBox btnBack;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtRole;
         private System.Windows.Forms.Label label7;
     }
 }

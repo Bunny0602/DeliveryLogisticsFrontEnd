@@ -266,6 +266,7 @@
             // 
             // ProfileContainer
             // 
+            this.ProfileContainer.BackColor = System.Drawing.Color.Transparent;
             this.ProfileContainer.ImageRotate = 0F;
             this.ProfileContainer.Location = new System.Drawing.Point(340, 187);
             this.ProfileContainer.MaximumSize = new System.Drawing.Size(280, 280);
@@ -355,9 +356,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.ProfileContainer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ProfileContainer);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.MaximumSize = new System.Drawing.Size(1200, 640);
             this.MinimumSize = new System.Drawing.Size(1200, 640);

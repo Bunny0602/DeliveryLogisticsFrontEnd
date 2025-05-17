@@ -16,6 +16,7 @@ namespace DeliveryLogisticsSystem
 {
     public partial class LoginForm : Form
     {
+
         public LoginForm()
         {
             InitializeComponent();
@@ -23,6 +24,8 @@ namespace DeliveryLogisticsSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // Handles the login button click event. Authenticates the user or personnel by checking the provided email and password
+            // against the users and personnel tables. If authentication is successful, opens the appropriate dashboard based on role.
             string email = inputEmail.Text.Trim();
             string password = inputPass.Text.Trim();
 
@@ -39,9 +42,9 @@ namespace DeliveryLogisticsSystem
             {
                 conn.Open();
 
-                string query = @"SELECT user_id, role FROM users WHERE email = @Email AND password = @Password
+                string query = @"SELECT user_id, email, role FROM users WHERE email = @Email AND password = @Password
                                 UNION
-                                SELECT personnel_id AS user_id, role FROM personnel WHERE email = @Email AND password = @Password";
+                                SELECT personnel_id AS user_id, email, role FROM personnel WHERE email = @Email AND password = @Password";
 
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Email", email);
@@ -52,24 +55,26 @@ namespace DeliveryLogisticsSystem
                     if (reader.Read())
                     {
                         string userId = reader["user_id"].ToString();
+                        string userEmail = reader["email"].ToString();
                         string role = reader["role"].ToString();
+
                         switch (role)
                         {
                             case "admin":
                                 MessageBox.Show("Welcome Admin!");
-                                AdminDashboard admindashboard = new AdminDashboard(userId);
+                                AdminDashboard admindashboard = new AdminDashboard(userId, email, role);
                                 admindashboard.Show();
                                 this.Hide();
                                 break;
                             case "driver":
                                 MessageBox.Show("Welcome Driver!");
-                                PersonnelDashboardForm persooneldashboard = new PersonnelDashboardForm(userId);
+                                PersonnelDashboardForm persooneldashboard = new PersonnelDashboardForm(userId, email, role);
                                 persooneldashboard.Show();
                                 this.Hide();
                                 break;
                             case "user":
                                 MessageBox.Show("Welcome User!");
-                                UserDashboardForm userdashboard = new UserDashboardForm(userId);
+                                UserDashboardForm userdashboard = new UserDashboardForm(userId, userEmail, email);
                                 userdashboard.Show();
                                 this.Hide();
                                 break;

@@ -41,20 +41,20 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.btnViewOrder = new System.Windows.Forms.PictureBox();
+            this.btnCancel = new System.Windows.Forms.PictureBox();
+            this.btnAccept = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataPersonnelOrders = new System.Windows.Forms.DataGridView();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnViewOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAccept)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPersonnelOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,38 +185,44 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Order";
             // 
-            // pictureBox7
+            // btnViewOrder
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(1023, 157);
-            this.pictureBox7.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox7.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox7.TabIndex = 9;
-            this.pictureBox7.TabStop = false;
+            this.btnViewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnViewOrder.Image")));
+            this.btnViewOrder.Location = new System.Drawing.Point(1023, 157);
+            this.btnViewOrder.MaximumSize = new System.Drawing.Size(28, 28);
+            this.btnViewOrder.MinimumSize = new System.Drawing.Size(28, 28);
+            this.btnViewOrder.Name = "btnViewOrder";
+            this.btnViewOrder.Size = new System.Drawing.Size(28, 28);
+            this.btnViewOrder.TabIndex = 9;
+            this.btnViewOrder.TabStop = false;
+            this.btnViewOrder.Click += new System.EventHandler(this.btnViewOrder_Click);
             // 
-            // pictureBox18
+            // btnCancel
             // 
-            this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
-            this.pictureBox18.Location = new System.Drawing.Point(1152, 157);
-            this.pictureBox18.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox18.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox18.TabIndex = 11;
-            this.pictureBox18.TabStop = false;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.Location = new System.Drawing.Point(1152, 157);
+            this.btnCancel.MaximumSize = new System.Drawing.Size(28, 28);
+            this.btnCancel.MinimumSize = new System.Drawing.Size(28, 28);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(28, 28);
+            this.btnCancel.TabIndex = 11;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // pictureBox17
+            // btnAccept
             // 
-            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(1109, 157);
-            this.pictureBox17.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox17.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox17.TabIndex = 10;
-            this.pictureBox17.TabStop = false;
+            this.btnAccept.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnAccept.Image")));
+            this.btnAccept.Location = new System.Drawing.Point(1109, 157);
+            this.btnAccept.MaximumSize = new System.Drawing.Size(28, 28);
+            this.btnAccept.MinimumSize = new System.Drawing.Size(28, 28);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(28, 28);
+            this.btnAccept.TabIndex = 10;
+            this.btnAccept.TabStop = false;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // pictureBox10
             // 
@@ -229,19 +235,20 @@
             this.pictureBox10.TabIndex = 12;
             this.pictureBox10.TabStop = false;
             // 
-            // dataGridView1
+            // dataPersonnelOrders
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(315, 208);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(865, 392);
-            this.dataGridView1.TabIndex = 13;
+            this.dataPersonnelOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataPersonnelOrders.BackgroundColor = System.Drawing.Color.White;
+            this.dataPersonnelOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataPersonnelOrders.Location = new System.Drawing.Point(315, 208);
+            this.dataPersonnelOrders.Name = "dataPersonnelOrders";
+            this.dataPersonnelOrders.ReadOnly = true;
+            this.dataPersonnelOrders.RowHeadersVisible = false;
+            this.dataPersonnelOrders.RowHeadersWidth = 62;
+            this.dataPersonnelOrders.RowTemplate.Height = 28;
+            this.dataPersonnelOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataPersonnelOrders.Size = new System.Drawing.Size(865, 392);
+            this.dataPersonnelOrders.TabIndex = 13;
             // 
             // pictureBox3
             // 
@@ -261,11 +268,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1178, 584);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataPersonnelOrders);
             this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox18);
-            this.Controls.Add(this.pictureBox17);
-            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAccept);
+            this.Controls.Add(this.btnViewOrder);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
@@ -279,11 +286,11 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnViewOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAccept)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPersonnelOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -304,11 +311,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox18;
-        private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.PictureBox btnViewOrder;
+        private System.Windows.Forms.PictureBox btnCancel;
+        private System.Windows.Forms.PictureBox btnAccept;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataPersonnelOrders;
         private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

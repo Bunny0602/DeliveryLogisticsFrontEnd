@@ -42,25 +42,25 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnUploadImage = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.inputPassword = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.inputAddress = new System.Windows.Forms.TextBox();
+            this.inputPhone = new System.Windows.Forms.TextBox();
+            this.inputFullName = new System.Windows.Forms.TextBox();
+            this.inputEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ProfileContainer = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfileContainer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -174,19 +174,19 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(233)))));
             this.panel7.Controls.Add(this.btnUpdate);
             this.panel7.Controls.Add(this.btnUploadImage);
-            this.panel7.Controls.Add(this.textBox5);
+            this.panel7.Controls.Add(this.inputPassword);
             this.panel7.Controls.Add(this.label7);
-            this.panel7.Controls.Add(this.textBox4);
-            this.panel7.Controls.Add(this.textBox3);
-            this.panel7.Controls.Add(this.textBox2);
-            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.inputAddress);
+            this.panel7.Controls.Add(this.inputPhone);
+            this.panel7.Controls.Add(this.inputFullName);
+            this.panel7.Controls.Add(this.inputEmail);
             this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.label4);
             this.panel7.Controls.Add(this.label3);
             this.panel7.Controls.Add(this.label2);
             this.panel7.Controls.Add(this.ProfileContainer);
-            this.panel7.Controls.Add(this.pictureBox2);
+            this.panel7.Controls.Add(this.btnBack);
             this.panel7.Location = new System.Drawing.Point(345, 143);
             this.panel7.MaximumSize = new System.Drawing.Size(810, 424);
             this.panel7.MinimumSize = new System.Drawing.Size(810, 424);
@@ -205,6 +205,7 @@
             this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnUploadImage
             // 
@@ -217,20 +218,20 @@
             this.btnUploadImage.TabIndex = 16;
             this.btnUploadImage.Text = "Upload Image";
             this.btnUploadImage.UseVisualStyleBackColor = false;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
-            // textBox5
+            // inputPassword
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(439, 231);
-            this.textBox5.MaximumSize = new System.Drawing.Size(300, 27);
-            this.textBox5.MinimumSize = new System.Drawing.Size(300, 27);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(300, 27);
-            this.textBox5.TabIndex = 13;
+            this.inputPassword.BackColor = System.Drawing.Color.White;
+            this.inputPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.inputPassword.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.inputPassword.Location = new System.Drawing.Point(439, 231);
+            this.inputPassword.MaximumSize = new System.Drawing.Size(300, 27);
+            this.inputPassword.MinimumSize = new System.Drawing.Size(300, 27);
+            this.inputPassword.Multiline = true;
+            this.inputPassword.Name = "inputPassword";
+            this.inputPassword.Size = new System.Drawing.Size(300, 27);
+            this.inputPassword.TabIndex = 13;
             // 
             // label7
             // 
@@ -243,61 +244,58 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Password";
             // 
-            // textBox4
+            // inputAddress
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(439, 278);
-            this.textBox4.MaximumSize = new System.Drawing.Size(300, 88);
-            this.textBox4.MinimumSize = new System.Drawing.Size(300, 88);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(300, 88);
-            this.textBox4.TabIndex = 11;
+            this.inputAddress.BackColor = System.Drawing.Color.White;
+            this.inputAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.inputAddress.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.inputAddress.Location = new System.Drawing.Point(439, 278);
+            this.inputAddress.MaximumSize = new System.Drawing.Size(300, 88);
+            this.inputAddress.MinimumSize = new System.Drawing.Size(300, 88);
+            this.inputAddress.Multiline = true;
+            this.inputAddress.Name = "inputAddress";
+            this.inputAddress.Size = new System.Drawing.Size(300, 88);
+            this.inputAddress.TabIndex = 11;
             // 
-            // textBox3
+            // inputPhone
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(439, 174);
-            this.textBox3.MaximumSize = new System.Drawing.Size(300, 27);
-            this.textBox3.MinimumSize = new System.Drawing.Size(300, 27);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(300, 27);
-            this.textBox3.TabIndex = 10;
+            this.inputPhone.BackColor = System.Drawing.Color.White;
+            this.inputPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.inputPhone.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.inputPhone.Location = new System.Drawing.Point(439, 174);
+            this.inputPhone.MaximumSize = new System.Drawing.Size(300, 27);
+            this.inputPhone.MinimumSize = new System.Drawing.Size(300, 27);
+            this.inputPhone.Multiline = true;
+            this.inputPhone.Name = "inputPhone";
+            this.inputPhone.Size = new System.Drawing.Size(300, 27);
+            this.inputPhone.TabIndex = 10;
             // 
-            // textBox2
+            // inputFullName
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(439, 117);
-            this.textBox2.MaximumSize = new System.Drawing.Size(300, 27);
-            this.textBox2.MinimumSize = new System.Drawing.Size(300, 27);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(300, 27);
-            this.textBox2.TabIndex = 9;
+            this.inputFullName.BackColor = System.Drawing.Color.White;
+            this.inputFullName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.inputFullName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.inputFullName.Location = new System.Drawing.Point(439, 117);
+            this.inputFullName.MaximumSize = new System.Drawing.Size(300, 27);
+            this.inputFullName.MinimumSize = new System.Drawing.Size(300, 27);
+            this.inputFullName.Multiline = true;
+            this.inputFullName.Name = "inputFullName";
+            this.inputFullName.Size = new System.Drawing.Size(300, 27);
+            this.inputFullName.TabIndex = 9;
             // 
-            // textBox1
+            // inputEmail
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(439, 60);
-            this.textBox1.MaximumSize = new System.Drawing.Size(300, 27);
-            this.textBox1.MinimumSize = new System.Drawing.Size(300, 27);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(300, 27);
-            this.textBox1.TabIndex = 8;
+            this.inputEmail.BackColor = System.Drawing.Color.White;
+            this.inputEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.inputEmail.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.inputEmail.Location = new System.Drawing.Point(439, 60);
+            this.inputEmail.MaximumSize = new System.Drawing.Size(300, 27);
+            this.inputEmail.MinimumSize = new System.Drawing.Size(300, 27);
+            this.inputEmail.Multiline = true;
+            this.inputEmail.Name = "inputEmail";
+            this.inputEmail.ReadOnly = true;
+            this.inputEmail.Size = new System.Drawing.Size(300, 27);
+            this.inputEmail.TabIndex = 8;
             // 
             // label6
             // 
@@ -363,19 +361,22 @@
             this.ProfileContainer.Name = "ProfileContainer";
             this.ProfileContainer.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.ProfileContainer.Size = new System.Drawing.Size(200, 200);
+            this.ProfileContainer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProfileContainer.TabIndex = 1;
             this.ProfileContainer.TabStop = false;
             // 
-            // pictureBox2
+            // btnBack
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(15, 10);
-            this.pictureBox2.MaximumSize = new System.Drawing.Size(35, 35);
-            this.pictureBox2.MinimumSize = new System.Drawing.Size(35, 35);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(15, 10);
+            this.btnBack.MaximumSize = new System.Drawing.Size(35, 35);
+            this.btnBack.MinimumSize = new System.Drawing.Size(35, 35);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(35, 35);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // label1
             // 
@@ -408,7 +409,7 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfileContainer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,19 +430,19 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnUploadImage;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox inputPassword;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox inputAddress;
+        private System.Windows.Forms.TextBox inputPhone;
+        private System.Windows.Forms.TextBox inputFullName;
+        private System.Windows.Forms.TextBox inputEmail;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox ProfileContainer;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox btnBack;
         private System.Windows.Forms.Label label1;
     }
 }

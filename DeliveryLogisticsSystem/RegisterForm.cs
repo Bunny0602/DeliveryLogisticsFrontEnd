@@ -18,6 +18,7 @@ namespace DeliveryLogisticsSystem
             InitializeComponent();
         }
 
+        // Handles the registration logic, including validation and database operations
         private void btnRegister_Click(object sender, EventArgs e)
         {
             string email = inputEmail.Text.Trim();
@@ -43,7 +44,7 @@ namespace DeliveryLogisticsSystem
             {
                 conn.Open();
 
-                // Check for duplicate email
+                // Check for duplicate email in both users and personnel tables
                 string checkEmailQuery = "SELECT COUNT(*) FROM users WHERE email = @Email " +
                                           "UNION " +
                                           "SELECT COUNT(*) FROM personnel WHERE email = @Email";
@@ -57,7 +58,7 @@ namespace DeliveryLogisticsSystem
                     return;
                 }
 
-                // Check for duplicate phone number
+                // Check for duplicate phone number in users table
                 string checkPhoneQuery = "SELECT COUNT(*) FROM users WHERE phonenumber = @PhoneNumber";
                 MySqlCommand checkCmd = new MySqlCommand(checkPhoneQuery, conn);
                 checkCmd.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
@@ -69,7 +70,7 @@ namespace DeliveryLogisticsSystem
                     return;
                 }
 
-                // Insert new user
+                // Insert new user into users table
                 string query = "INSERT INTO users (email, password, phonenumber, role) VALUES (@Email, @Password, @PhoneNumber, 'user')";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Email", email);
