@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.Web.WebView2.Core;
+using MySql.Data.MySqlClient;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
@@ -24,6 +25,7 @@ namespace DeliveryLogisticsSystem
 
             txtEmail.Text = userEmail;
             txtEmail.ReadOnly = true;
+            txtPrice.ReadOnly = true;
 
             txtPickUpAddress.Leave += LocationTextBox_Leave;
             txtDropOffAddress.Leave += LocationTextBox_Leave;
@@ -39,25 +41,25 @@ namespace DeliveryLogisticsSystem
             LoadMap();
         }
 
-        private void CoreWebView2_WebMessageReceived(object sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
+        private void CoreWebView2_WebMessageReceived(object sender, CoreWebView2WebMessageReceivedEventArgs e)
         {
-            string message = e.TryGetWebMessageAsString();
-
-            if (double.TryParse(message, out double distanceMeters))
+            try
             {
-                double distanceKm = distanceMeters / 1000.0;
-                double baseFare = 50;
-                double perKmRate = 10; 
+                string message = e.WebMessageAsJson;
+                double distanceInMeters = double.Parse(message);
+                double distanceInKm = distanceInMeters / 1000.0;
+                double price = distanceInKm * 10.0;
 
-                double price = baseFare + (perKmRate * distanceKm);
-
-                this.Invoke(new Action(() =>
+                txtPrice.Invoke((MethodInvoker)(() =>
                 {
-                    txtPrice.Text = $"₱{price:F2}";
+                    txtPrice.Text = price.ToString("F2");
                 }));
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error calculating price: " + ex.Message);
+            }
         }
-
 
         private void LoadMap()
         {
@@ -73,76 +75,90 @@ namespace DeliveryLogisticsSystem
                                     </head>
                                     <body>
                                         <div id='map' style='width: 440px; height: 570px;'></div>
-                                    <script>
-                                        var map = L.map('map').setView([12.8797, 121.7740], 6);
-                                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                            maxZoom: 18,
-                                        }).addTo(map);
+                                        <script>
+                                            var map = L.map('map').setView([12.8797, 121.7740], 6);
+                                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                                maxZoom: 18,
+                                            }).addTo(map);
 
-                                        var pickupMarker = null;
-                                        var dropoffMarker = null;
-                                        var routeLine = null;
+                                            var pickupMarker = null;
+                                            var dropoffMarker = null;
+                                            var routeLine = null;
 
-                                        // Uniform marker styles
-                                        const redIcon = L.icon({
-                                            iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
-                                            iconSize: [32, 32],
-                                            iconAnchor: [16, 32],
-                                            popupAnchor: [0, -32]
-                                        });
+                                            const redIcon = L.icon({
+                                                iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+                                                iconSize: [32, 32],
+                                                iconAnchor: [16, 32],
+                                                popupAnchor: [0, -32]
+                                            });
 
-                                        const blueIcon = L.icon({
-                                            iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-                                            iconSize: [32, 32],
-                                            iconAnchor: [16, 32],
-                                            popupAnchor: [0, -32]
-                                        });
+                                            const blueIcon = L.icon({
+                                                iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                                                iconSize: [32, 32],
+                                                iconAnchor: [16, 32],
+                                                popupAnchor: [0, -32]
+                                            });
 
-                                        window.chrome.webview.addEventListener('message', event => {
-                                            const data = event.data;
+                                            window.chrome.webview.addEventListener('message', event => {
+                                                const data = event.data;
 
-                                            if (data.startsWith('pickup:')) {
-                                                const [lat, lon] = data.replace('pickup:', '').split(',').map(Number);
-                                                if (pickupMarker) {
-                                                    pickupMarker.setLatLng([lat, lon]);
-                                                } else {
-                                                    pickupMarker = L.marker([lat, lon], { icon: redIcon }).addTo(map).bindPopup('Pickup').openPopup();
+                                                if (data.startsWith('pickup:')) {
+                                                    const [lat, lon] = data.replace('pickup:', '').split(',').map(Number);
+                                                    if (pickupMarker) {
+                                                        pickupMarker.setLatLng([lat, lon]);
+                                                    } else {
+                                                        pickupMarker = L.marker([lat, lon], { icon: redIcon }).addTo(map).bindPopup('Pickup').openPopup();
+                                                    }
+                                                    map.setView([lat, lon], 13);
                                                 }
-                                                map.setView([lat, lon], 13);
-                                            }
 
-                                            if (data.startsWith('dropoff:')) {
-                                                const [lat, lon] = data.replace('dropoff:', '').split(',').map(Number);
-                                                if (dropoffMarker) {
-                                                    dropoffMarker.setLatLng([lat, lon]);
-                                                } else {
-                                                    dropoffMarker = L.marker([lat, lon], { icon: blueIcon }).addTo(map).bindPopup('Drop-off').openPopup();
+                                                if (data.startsWith('dropoff:')) {
+                                                    const [lat, lon] = data.replace('dropoff:', '').split(',').map(Number);
+                                                    if (dropoffMarker) {
+                                                        dropoffMarker.setLatLng([lat, lon]);
+                                                    } else {
+                                                        dropoffMarker = L.marker([lat, lon], { icon: blueIcon }).addTo(map).bindPopup('Drop-off').openPopup();
+                                                    }
+                                                    map.setView([lat, lon], 13);
                                                 }
-                                                map.setView([lat, lon], 13);
-                                            }
 
-                                            if (data.startsWith('route:')) {
-                                                const coords = data.replace('route:', '').split(';');
-                                                const [pickupLat, pickupLon] = coords[0].split(',').map(Number);
-                                                const [dropoffLat, dropoffLon] = coords[1].split(',').map(Number);
+                                                if (data.startsWith('route:')) {
+                                                    const coords = data.replace('route:', '').split(';');
+                                                    const [pickupLat, pickupLon] = coords[0].split(',').map(Number);
+                                                    const [dropoffLat, dropoffLon] = coords[1].split(',').map(Number);
 
-                                                fetch(`https://router.project-osrm.org/route/v1/driving/${pickupLon},${pickupLat};${dropoffLon},${dropoffLat}?overview=full&geometries=geojson`)
-                                                    .then(response => response.json())
-                                                    .then(data => {
-                                                        const routeCoords = data.routes[0].geometry.coordinates.map(coord => [coord[1], coord[0]]);
-                                                        if (routeLine) map.removeLayer(routeLine);
+                                                    if (routeLine) {
+                                                        map.removeLayer(routeLine);
+                                                    }
 
-                                                        routeLine = L.polyline(routeCoords, { color: 'red', weight: 4 }).addTo(map);
-                                                        map.fitBounds(routeLine.getBounds());
-                                                    })
-                                                    .catch(err => console.error('Routing error:', err));
-                                            }
-                                        });
-                                    </script>
+                                                    fetch(`https://router.project-osrm.org/route/v1/driving/${pickupLon},${pickupLat};${dropoffLon},${dropoffLat}?overview=full&geometries=geojson`)
+                                                        .then(response => response.json())
+                                                        .then(data => {
+                                                            const route = data.routes[0].geometry;
+                                                            routeLine = L.geoJSON(route, {
+                                                                style: {
+                                                                    color: 'red',
+                                                                    weight: 4
+                                                                }
+                                                            }).addTo(map);
+
+                                                            // Optional: Zoom to fit both markers
+                                                            var bounds = L.latLngBounds([[pickupLat, pickupLon], [dropoffLat, dropoffLon]]);
+                                                            map.fitBounds(bounds);
+
+                                                            const distance = data.routes[0].distance;
+                                                            window.chrome.webview.postMessage(distance);
+                                                        })
+                                                        .catch(err => console.error('Routing error:', err));
+                                                }
+                                            });
+                                        </script>
                                     </body>
                                     </html>";
+
             WBBMap.CoreWebView2.NavigateToString(htmlContent);
         }
+
 
         private async void LocationTextBox_Leave(object sender, EventArgs e)
         {
@@ -187,48 +203,31 @@ namespace DeliveryLogisticsSystem
                 using (HttpClient client = new HttpClient())
                 {
                     client.DefaultRequestHeaders.UserAgent.ParseAdd("DeliveryLogisticsSystem/1.0");
-
                     var response = await client.GetAsync(url);
                     if (!response.IsSuccessStatusCode)
                     {
-                        MessageBox.Show($"Geocoding failed with status code: {response.StatusCode}", "Geocoding Error");
+                        MessageBox.Show($"Geocoding failed: {response.StatusCode}");
                         return null;
                     }
 
                     string responseData = await response.Content.ReadAsStringAsync();
-
                     if (string.IsNullOrWhiteSpace(responseData))
-                    {
-                        MessageBox.Show("Geocoding returned an empty response.", "Geocoding Error");
                         return null;
+
+                    JArray json = JArray.Parse(responseData);
+                    if (json.Count > 0)
+                    {
+                        double lat = double.Parse(json[0]["lat"].ToString());
+                        double lon = double.Parse(json[0]["lon"].ToString());
+                        return (lat, lon);
                     }
 
-                    try
-                    {
-                        JArray json = JArray.Parse(responseData);
-
-                        if (json.Count > 0)
-                        {
-                            double lat = double.Parse(json[0]["lat"].ToString());
-                            double lon = double.Parse(json[0]["lon"].ToString());
-                            return (lat, lon);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Address not found during geocoding.", "Geocoding Warning");
-                            return null;
-                        }
-                    }
-                    catch (Exception parseEx)
-                    {
-                        MessageBox.Show($"Geocoding JSON parse error: {parseEx.Message}", "Geocoding Error");
-                        return null;
-                    }
+                    return null;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Geocoding error: {ex.Message}", "Geocoding Exception");
+                MessageBox.Show("Geocoding error: " + ex.Message);
                 return null;
             }
         }
@@ -241,7 +240,8 @@ namespace DeliveryLogisticsSystem
             string phone = txtPhone.Text.Trim();
             string priceText = txtPrice.Text.Replace("₱", "").Trim();
 
-            if (string.IsNullOrEmpty(pickup) || string.IsNullOrEmpty(dropoff) || string.IsNullOrEmpty(dropName) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(priceText))
+            if (string.IsNullOrEmpty(pickup) || string.IsNullOrEmpty(dropoff) ||
+                string.IsNullOrEmpty(dropName) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(priceText))
             {
                 MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -258,9 +258,8 @@ namespace DeliveryLogisticsSystem
             {
                 conn.Open();
                 string query = @"
-                    INSERT INTO orders (user_id, email, name, pickup_location, dropoff_name, dropoff_location, phonenumber, price) 
+                    INSERT INTO orders (user_id, email, name, pickup_location, dropoff_name, dropoff_location, phonenumber, price)
                     VALUES (@userId, @userEmail, @dropName, @pickup, @dropName, @dropoff, @phone, @price)";
-
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@userId", userId);
                 cmd.Parameters.AddWithValue("@userEmail", userEmail);
@@ -269,7 +268,6 @@ namespace DeliveryLogisticsSystem
                 cmd.Parameters.AddWithValue("@dropoff", dropoff);
                 cmd.Parameters.AddWithValue("@phone", phone);
                 cmd.Parameters.AddWithValue("@price", price);
-
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Order created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearFields();
