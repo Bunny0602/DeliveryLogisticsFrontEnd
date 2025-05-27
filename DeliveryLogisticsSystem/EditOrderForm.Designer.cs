@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditOrderForm));
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.WBBMap = new System.Windows.Forms.WebBrowser();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.TxtDropOff = new System.Windows.Forms.TextBox();
+            this.TxtDropName = new System.Windows.Forms.TextBox();
+            this.TxtPickUp = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnUpdateOrder = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,81 +41,73 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnback = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.WBBMap = new Microsoft.Web.WebView2.WinForms.WebView2();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WBBMap)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox5
+            // txtPhone
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(320, 426);
-            this.textBox5.MaximumSize = new System.Drawing.Size(317, 32);
-            this.textBox5.MinimumSize = new System.Drawing.Size(317, 32);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(317, 32);
-            this.textBox5.TabIndex = 32;
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(320, 426);
+            this.txtPhone.MaximumSize = new System.Drawing.Size(317, 32);
+            this.txtPhone.MinimumSize = new System.Drawing.Size(317, 32);
+            this.txtPhone.Multiline = true;
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(317, 32);
+            this.txtPhone.TabIndex = 32;
             // 
-            // textBox4
+            // TxtDropOff
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(320, 364);
-            this.textBox4.MaximumSize = new System.Drawing.Size(317, 32);
-            this.textBox4.MinimumSize = new System.Drawing.Size(317, 32);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(317, 32);
-            this.textBox4.TabIndex = 31;
+            this.TxtDropOff.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtDropOff.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.TxtDropOff.Location = new System.Drawing.Point(320, 364);
+            this.TxtDropOff.MaximumSize = new System.Drawing.Size(317, 32);
+            this.TxtDropOff.MinimumSize = new System.Drawing.Size(317, 32);
+            this.TxtDropOff.Multiline = true;
+            this.TxtDropOff.Name = "TxtDropOff";
+            this.TxtDropOff.Size = new System.Drawing.Size(317, 32);
+            this.TxtDropOff.TabIndex = 31;
             // 
-            // textBox3
+            // TxtDropName
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(320, 302);
-            this.textBox3.MaximumSize = new System.Drawing.Size(317, 32);
-            this.textBox3.MinimumSize = new System.Drawing.Size(317, 32);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(317, 32);
-            this.textBox3.TabIndex = 30;
+            this.TxtDropName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtDropName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.TxtDropName.Location = new System.Drawing.Point(320, 302);
+            this.TxtDropName.MaximumSize = new System.Drawing.Size(317, 32);
+            this.TxtDropName.MinimumSize = new System.Drawing.Size(317, 32);
+            this.TxtDropName.Multiline = true;
+            this.TxtDropName.Name = "TxtDropName";
+            this.TxtDropName.Size = new System.Drawing.Size(317, 32);
+            this.TxtDropName.TabIndex = 30;
             // 
-            // textBox2
+            // TxtPickUp
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(320, 235);
-            this.textBox2.MaximumSize = new System.Drawing.Size(317, 32);
-            this.textBox2.MinimumSize = new System.Drawing.Size(317, 32);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(317, 32);
-            this.textBox2.TabIndex = 29;
+            this.TxtPickUp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtPickUp.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.TxtPickUp.Location = new System.Drawing.Point(320, 235);
+            this.TxtPickUp.MaximumSize = new System.Drawing.Size(317, 32);
+            this.TxtPickUp.MinimumSize = new System.Drawing.Size(317, 32);
+            this.TxtPickUp.Multiline = true;
+            this.TxtPickUp.Name = "TxtPickUp";
+            this.TxtPickUp.Size = new System.Drawing.Size(317, 32);
+            this.TxtPickUp.TabIndex = 29;
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(320, 166);
-            this.textBox1.MaximumSize = new System.Drawing.Size(317, 32);
-            this.textBox1.MinimumSize = new System.Drawing.Size(317, 32);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(317, 32);
-            this.textBox1.TabIndex = 28;
-            // 
-            // WBBMap
-            // 
-            this.WBBMap.Dock = System.Windows.Forms.DockStyle.Right;
-            this.WBBMap.Location = new System.Drawing.Point(709, 0);
-            this.WBBMap.MaximumSize = new System.Drawing.Size(469, 600);
-            this.WBBMap.MinimumSize = new System.Drawing.Size(469, 600);
-            this.WBBMap.Name = "WBBMap";
-            this.WBBMap.Size = new System.Drawing.Size(469, 600);
-            this.WBBMap.TabIndex = 27;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(320, 166);
+            this.txtEmail.MaximumSize = new System.Drawing.Size(317, 32);
+            this.txtEmail.MinimumSize = new System.Drawing.Size(317, 32);
+            this.txtEmail.Multiline = true;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(317, 32);
+            this.txtEmail.TabIndex = 28;
             // 
             // btnUpdateOrder
             // 
@@ -131,6 +122,7 @@
             this.btnUpdateOrder.TabIndex = 26;
             this.btnUpdateOrder.Text = "Update";
             this.btnUpdateOrder.UseVisualStyleBackColor = false;
+            this.btnUpdateOrder.Click += new System.EventHandler(this.btnUpdateOrder_Click);
             // 
             // label7
             // 
@@ -192,16 +184,18 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Edit Order";
             // 
-            // pictureBox2
+            // btnback
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(320, 17);
-            this.pictureBox2.MaximumSize = new System.Drawing.Size(35, 35);
-            this.pictureBox2.MinimumSize = new System.Drawing.Size(35, 35);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox2.TabIndex = 18;
-            this.pictureBox2.TabStop = false;
+            this.btnback.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnback.Image = ((System.Drawing.Image)(resources.GetObject("btnback.Image")));
+            this.btnback.Location = new System.Drawing.Point(320, 17);
+            this.btnback.MaximumSize = new System.Drawing.Size(35, 35);
+            this.btnback.MinimumSize = new System.Drawing.Size(35, 35);
+            this.btnback.Name = "btnback";
+            this.btnback.Size = new System.Drawing.Size(35, 35);
+            this.btnback.TabIndex = 18;
+            this.btnback.TabStop = false;
+            this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
             // pictureBox1
             // 
@@ -215,18 +209,32 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // WBBMap
+            // 
+            this.WBBMap.AllowExternalDrop = true;
+            this.WBBMap.CreationProperties = null;
+            this.WBBMap.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.WBBMap.Dock = System.Windows.Forms.DockStyle.Right;
+            this.WBBMap.Location = new System.Drawing.Point(709, 0);
+            this.WBBMap.MaximumSize = new System.Drawing.Size(469, 600);
+            this.WBBMap.MinimumSize = new System.Drawing.Size(469, 600);
+            this.WBBMap.Name = "WBBMap";
+            this.WBBMap.Size = new System.Drawing.Size(469, 600);
+            this.WBBMap.TabIndex = 33;
+            this.WBBMap.ZoomFactor = 1D;
+            // 
             // EditOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1178, 584);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.WBBMap);
+            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.TxtDropOff);
+            this.Controls.Add(this.TxtDropName);
+            this.Controls.Add(this.TxtPickUp);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.btnUpdateOrder);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -234,7 +242,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.btnback);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.MaximumSize = new System.Drawing.Size(1200, 640);
@@ -242,20 +250,20 @@
             this.Name = "EditOrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditOrderForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnback)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WBBMap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.WebBrowser WBBMap;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox TxtDropOff;
+        private System.Windows.Forms.TextBox TxtDropName;
+        private System.Windows.Forms.TextBox TxtPickUp;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnUpdateOrder;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -263,7 +271,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox btnback;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Microsoft.Web.WebView2.WinForms.WebView2 WBBMap;
     }
 }

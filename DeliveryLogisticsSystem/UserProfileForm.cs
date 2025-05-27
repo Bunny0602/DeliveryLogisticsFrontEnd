@@ -163,5 +163,19 @@ namespace DeliveryLogisticsSystem
         {
             this.Close();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+
+            this.Close();
+        }
+
+        private void btnCreateOrder_Click(object sender, EventArgs e)
+        {
+            CreateOrderForm createOrderForm = new CreateOrderForm(userId, txtEmail.Text, "User", 0);
+            createOrderForm.Show();
+        }
     }
 }

@@ -36,7 +36,8 @@ namespace DeliveryLogisticsSystem
                     string query = @"
                         SELECT order_id AS 'Order ID', email AS 'Email', pickup_location AS 'Pickup Location',
                                dropoff_name AS 'DropOff Name', dropoff_location AS 'Dropoff Location', 
-                               phonenumber AS 'Phone Number', price AS 'Price', status AS 'Status'
+                               phonenumber AS 'Phone Number', price AS 'Price', status AS 'Status',
+                               personnelname AS 'Personnel Name'
                         FROM orders
                         WHERE status = 'Pending' 
                            OR (personnel_id = @PersonnelId AND status IN ('To Ship', 'To Receive', 'Delivered'))";
@@ -159,15 +160,31 @@ namespace DeliveryLogisticsSystem
                     using (MySqlConnection conn = new DataBase().GetConnection())
                     {
                         conn.Open();
-                        string query = @"
+
+                        // Get personnel full name
+                        string getNameQuery = "SELECT fullname FROM personnel WHERE personnel_id = @PersonnelId";
+                        MySqlCommand getNameCmd = new MySqlCommand(getNameQuery, conn);
+                        getNameCmd.Parameters.AddWithValue("@PersonnelId", personnelId);
+                        string personnelName = getNameCmd.ExecuteScalar()?.ToString();
+
+                        if (string.IsNullOrEmpty(personnelName))
+                        {
+                            MessageBox.Show("Could not find personnel name.");
+                            return;
+                        }
+
+                        // Update order with personnel_id, personnelname, and status
+                        string updateQuery = @"
                             UPDATE orders 
-                            SET personnel_id = @PersonnelId, status = 'To Ship' 
+                            SET personnel_id = @PersonnelId, personnelname = @PersonnelName, status = 'To Ship' 
                             WHERE order_id = @OrderId AND status = 'Pending'";
 
-                        MySqlCommand cmd = new MySqlCommand(query, conn);
-                        cmd.Parameters.AddWithValue("@PersonnelId", personnelId);
-                        cmd.Parameters.AddWithValue("@OrderId", orderId);
-                        cmd.ExecuteNonQuery();
+                        MySqlCommand updateCmd = new MySqlCommand(updateQuery, conn);
+                        updateCmd.Parameters.AddWithValue("@PersonnelId", personnelId);
+                        updateCmd.Parameters.AddWithValue("@PersonnelName", personnelName);
+                        updateCmd.Parameters.AddWithValue("@OrderId", orderId);
+
+                        updateCmd.ExecuteNonQuery();
                     }
 
                     MessageBox.Show("Order accepted successfully!");
@@ -198,7 +215,7 @@ namespace DeliveryLogisticsSystem
                         conn.Open();
                         string query = @"
                             UPDATE orders 
-                            SET personnel_id = NULL, status = 'Pending' 
+                            SET personnel_id = NULL, personnelname = NULL, status = 'Pending' 
                             WHERE order_id = @OrderId";
 
                         MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -217,6 +234,66 @@ namespace DeliveryLogisticsSystem
             else
             {
                 MessageBox.Show("Please select an order to cancel.");
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+
+            this.Close();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            PersonnelProfileForm profileForm = new PersonnelProfileForm(personnelId);
+            profileForm.Show();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dataPersonnelOrders.SelectedRows.Count > 0)
+            {
+                int orderId = Convert.ToInt32(dataPersonnelOrders.SelectedRows[0].Cells["Order ID"].Value);
+
+                var confirmResult = MessageBox.Show($"Are you sure you want to delete this data?",
+                                                    "Confirm Delete",
+                                                    MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        using (MySqlConnection conn = new DataBase().GetConnection())
+                        {
+                            conn.Open();
+                            string query = "DELETE FROM orders WHERE order_id = @OrderId";
+                            MySqlCommand cmd = new MySqlCommand(query, conn);
+                            cmd.Parameters.AddWithValue("@OrderId", orderId);
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Order deleted successfully.");
+                                LoadAssignedOrders();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to delete the order. It might have been deleted already.");
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error deleting order: " + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an order to delete.");
             }
         }
     }

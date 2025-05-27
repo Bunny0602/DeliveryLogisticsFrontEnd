@@ -92,6 +92,7 @@
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // panel6
             // 
@@ -132,6 +133,7 @@
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panel4
             // 

@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btnCreateOrder = new System.Windows.Forms.Button();
+            this.btnProfile = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -44,7 +44,7 @@
             this.btnViewOrder = new System.Windows.Forms.PictureBox();
             this.btnCancel = new System.Windows.Forms.PictureBox();
             this.btnAccept = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.btnDelete = new System.Windows.Forms.PictureBox();
             this.dataPersonnelOrders = new System.Windows.Forms.DataGridView();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -53,7 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnViewOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAccept)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonnelOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(197)))), ((int)(((byte)(171)))));
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.btnCreateOrder);
+            this.panel1.Controls.Add(this.btnProfile);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.panel4);
@@ -87,6 +87,7 @@
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // panel6
             // 
@@ -96,17 +97,18 @@
             this.panel6.Size = new System.Drawing.Size(300, 2);
             this.panel6.TabIndex = 4;
             // 
-            // btnCreateOrder
+            // btnProfile
             // 
-            this.btnCreateOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(165)))), ((int)(((byte)(119)))));
-            this.btnCreateOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateOrder.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.btnCreateOrder.Location = new System.Drawing.Point(0, 252);
-            this.btnCreateOrder.Name = "btnCreateOrder";
-            this.btnCreateOrder.Size = new System.Drawing.Size(300, 50);
-            this.btnCreateOrder.TabIndex = 2;
-            this.btnCreateOrder.Text = "Profile";
-            this.btnCreateOrder.UseVisualStyleBackColor = false;
+            this.btnProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(165)))), ((int)(((byte)(119)))));
+            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.btnProfile.Location = new System.Drawing.Point(0, 252);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(300, 50);
+            this.btnProfile.TabIndex = 2;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.UseVisualStyleBackColor = false;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // panel5
             // 
@@ -224,16 +226,17 @@
             this.btnAccept.TabStop = false;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
-            // pictureBox10
+            // btnDelete
             // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(1066, 157);
-            this.pictureBox10.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox10.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox10.TabIndex = 12;
-            this.pictureBox10.TabStop = false;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.Location = new System.Drawing.Point(1066, 157);
+            this.btnDelete.MaximumSize = new System.Drawing.Size(28, 28);
+            this.btnDelete.MinimumSize = new System.Drawing.Size(28, 28);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(28, 28);
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.TabStop = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // dataPersonnelOrders
             // 
@@ -269,7 +272,7 @@
             this.ClientSize = new System.Drawing.Size(1178, 584);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.dataPersonnelOrders);
-            this.Controls.Add(this.pictureBox10);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnViewOrder);
@@ -289,7 +292,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnViewOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAccept)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonnelOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
@@ -302,7 +305,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button btnCreateOrder;
+        private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel panel4;
@@ -314,7 +317,7 @@
         private System.Windows.Forms.PictureBox btnViewOrder;
         private System.Windows.Forms.PictureBox btnCancel;
         private System.Windows.Forms.PictureBox btnAccept;
-        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox btnDelete;
         private System.Windows.Forms.DataGridView dataPersonnelOrders;
         private System.Windows.Forms.PictureBox pictureBox3;
     }

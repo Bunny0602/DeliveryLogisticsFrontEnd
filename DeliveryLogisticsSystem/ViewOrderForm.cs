@@ -120,5 +120,10 @@ namespace DeliveryLogisticsSystem
                 </body>
                 </html>";
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

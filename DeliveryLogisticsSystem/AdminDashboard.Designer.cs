@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -58,7 +58,7 @@
             this.btnDeleteUser = new System.Windows.Forms.PictureBox();
             this.UserRefresh = new System.Windows.Forms.PictureBox();
             this.btnViewUser = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSearchUser = new System.Windows.Forms.TextBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.tabPersonnel = new System.Windows.Forms.TabPage();
             this.dataPersonnel = new System.Windows.Forms.DataGridView();
@@ -67,16 +67,16 @@
             this.btnDeletePersonnel = new System.Windows.Forms.PictureBox();
             this.PersonnelRefresh = new System.Windows.Forms.PictureBox();
             this.btnViewPersonnel = new System.Windows.Forms.PictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPersonnel = new System.Windows.Forms.TextBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.tabOrder = new System.Windows.Forms.TabPage();
             this.dataOrder = new System.Windows.Forms.DataGridView();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.btnViewCompleteOrder = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.txtSearchOrder = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
@@ -105,7 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnViewCompleteOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,6 +138,7 @@
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // panel6
             // 
@@ -320,10 +321,10 @@
             // totalIncomeCount
             // 
             this.totalIncomeCount.AutoSize = true;
-            this.totalIncomeCount.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.totalIncomeCount.Location = new System.Drawing.Point(114, 39);
+            this.totalIncomeCount.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.totalIncomeCount.Location = new System.Drawing.Point(98, 39);
             this.totalIncomeCount.Name = "totalIncomeCount";
-            this.totalIncomeCount.Size = new System.Drawing.Size(46, 54);
+            this.totalIncomeCount.Size = new System.Drawing.Size(35, 41);
             this.totalIncomeCount.TabIndex = 6;
             this.totalIncomeCount.Text = "0";
             // 
@@ -367,7 +368,7 @@
             this.tabUser.Controls.Add(this.btnDeleteUser);
             this.tabUser.Controls.Add(this.UserRefresh);
             this.tabUser.Controls.Add(this.btnViewUser);
-            this.tabUser.Controls.Add(this.textBox2);
+            this.tabUser.Controls.Add(this.txtSearchUser);
             this.tabUser.Controls.Add(this.pictureBox8);
             this.tabUser.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.tabUser.Location = new System.Drawing.Point(4, 29);
@@ -389,14 +390,14 @@
             this.dataUser.MinimumSize = new System.Drawing.Size(816, 343);
             this.dataUser.Name = "dataUser";
             this.dataUser.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataUser.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataUser.RowHeadersVisible = false;
             this.dataUser.RowHeadersWidth = 62;
             this.dataUser.RowTemplate.Height = 28;
@@ -443,15 +444,15 @@
             this.btnViewUser.TabStop = false;
             this.btnViewUser.Click += new System.EventHandler(this.btnViewUser_Click);
             // 
-            // textBox2
+            // txtSearchUser
             // 
-            this.textBox2.Location = new System.Drawing.Point(53, 15);
-            this.textBox2.MaximumSize = new System.Drawing.Size(200, 28);
-            this.textBox2.MinimumSize = new System.Drawing.Size(200, 28);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 28);
-            this.textBox2.TabIndex = 4;
+            this.txtSearchUser.Location = new System.Drawing.Point(53, 15);
+            this.txtSearchUser.MaximumSize = new System.Drawing.Size(200, 28);
+            this.txtSearchUser.MinimumSize = new System.Drawing.Size(200, 28);
+            this.txtSearchUser.Multiline = true;
+            this.txtSearchUser.Name = "txtSearchUser";
+            this.txtSearchUser.Size = new System.Drawing.Size(200, 28);
+            this.txtSearchUser.TabIndex = 4;
             // 
             // pictureBox8
             // 
@@ -473,7 +474,7 @@
             this.tabPersonnel.Controls.Add(this.btnDeletePersonnel);
             this.tabPersonnel.Controls.Add(this.PersonnelRefresh);
             this.tabPersonnel.Controls.Add(this.btnViewPersonnel);
-            this.tabPersonnel.Controls.Add(this.textBox3);
+            this.tabPersonnel.Controls.Add(this.txtPersonnel);
             this.tabPersonnel.Controls.Add(this.pictureBox14);
             this.tabPersonnel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.tabPersonnel.Location = new System.Drawing.Point(4, 29);
@@ -566,15 +567,15 @@
             this.btnViewPersonnel.TabStop = false;
             this.btnViewPersonnel.Click += new System.EventHandler(this.btnViewPersonnel_Click);
             // 
-            // textBox3
+            // txtPersonnel
             // 
-            this.textBox3.Location = new System.Drawing.Point(53, 15);
-            this.textBox3.MaximumSize = new System.Drawing.Size(200, 28);
-            this.textBox3.MinimumSize = new System.Drawing.Size(200, 28);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 28);
-            this.textBox3.TabIndex = 9;
+            this.txtPersonnel.Location = new System.Drawing.Point(53, 15);
+            this.txtPersonnel.MaximumSize = new System.Drawing.Size(200, 28);
+            this.txtPersonnel.MinimumSize = new System.Drawing.Size(200, 28);
+            this.txtPersonnel.Multiline = true;
+            this.txtPersonnel.Name = "txtPersonnel";
+            this.txtPersonnel.Size = new System.Drawing.Size(200, 28);
+            this.txtPersonnel.TabIndex = 9;
             // 
             // pictureBox14
             // 
@@ -590,12 +591,12 @@
             // tabOrder
             // 
             this.tabOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
+            this.tabOrder.Controls.Add(this.txtSearchOrder);
             this.tabOrder.Controls.Add(this.dataOrder);
             this.tabOrder.Controls.Add(this.pictureBox19);
             this.tabOrder.Controls.Add(this.pictureBox18);
             this.tabOrder.Controls.Add(this.pictureBox17);
-            this.tabOrder.Controls.Add(this.comboBox1);
-            this.tabOrder.Controls.Add(this.pictureBox6);
+            this.tabOrder.Controls.Add(this.btnViewCompleteOrder);
             this.tabOrder.Controls.Add(this.pictureBox5);
             this.tabOrder.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.tabOrder.Location = new System.Drawing.Point(4, 29);
@@ -654,28 +655,17 @@
             this.pictureBox17.TabIndex = 4;
             this.pictureBox17.TabStop = false;
             // 
-            // comboBox1
+            // btnViewCompleteOrder
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Order",
-            "Complete Order"});
-            this.comboBox1.Location = new System.Drawing.Point(53, 15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 28);
-            this.comboBox1.TabIndex = 3;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(628, 15);
-            this.pictureBox6.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox6.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox6.TabIndex = 2;
-            this.pictureBox6.TabStop = false;
+            this.btnViewCompleteOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnViewCompleteOrder.Image")));
+            this.btnViewCompleteOrder.Location = new System.Drawing.Point(628, 15);
+            this.btnViewCompleteOrder.MaximumSize = new System.Drawing.Size(28, 28);
+            this.btnViewCompleteOrder.MinimumSize = new System.Drawing.Size(28, 28);
+            this.btnViewCompleteOrder.Name = "btnViewCompleteOrder";
+            this.btnViewCompleteOrder.Size = new System.Drawing.Size(28, 28);
+            this.btnViewCompleteOrder.TabIndex = 2;
+            this.btnViewCompleteOrder.TabStop = false;
+            this.btnViewCompleteOrder.Click += new System.EventHandler(this.btnViewCompleteOrder_Click);
             // 
             // pictureBox5
             // 
@@ -687,6 +677,16 @@
             this.pictureBox5.Size = new System.Drawing.Size(28, 28);
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
+            // 
+            // txtSearchOrder
+            // 
+            this.txtSearchOrder.Location = new System.Drawing.Point(54, 15);
+            this.txtSearchOrder.MaximumSize = new System.Drawing.Size(200, 28);
+            this.txtSearchOrder.MinimumSize = new System.Drawing.Size(200, 28);
+            this.txtSearchOrder.Multiline = true;
+            this.txtSearchOrder.Name = "txtSearchOrder";
+            this.txtSearchOrder.Size = new System.Drawing.Size(200, 28);
+            this.txtSearchOrder.TabIndex = 8;
             // 
             // AdminDashboard
             // 
@@ -735,11 +735,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnViewPersonnel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.tabOrder.ResumeLayout(false);
+            this.tabOrder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnViewCompleteOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
@@ -774,25 +775,25 @@
         private System.Windows.Forms.TabPage tabPersonnel;
         private System.Windows.Forms.TabPage tabOrder;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox btnViewCompleteOrder;
         private System.Windows.Forms.PictureBox btnDeleteUser;
         private System.Windows.Forms.PictureBox UserRefresh;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSearchUser;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.DataGridView dataUser;
         private System.Windows.Forms.PictureBox btnDeletePersonnel;
         private System.Windows.Forms.PictureBox PersonnelRefresh;
         private System.Windows.Forms.PictureBox btnViewPersonnel;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPersonnel;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.DataGridView dataPersonnel;
         private System.Windows.Forms.PictureBox btnEditPersonnel;
         private System.Windows.Forms.PictureBox pictureBox15;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.DataGridView dataOrder;
         private System.Windows.Forms.PictureBox btnViewUser;
+        private System.Windows.Forms.TextBox txtSearchOrder;
     }
 }

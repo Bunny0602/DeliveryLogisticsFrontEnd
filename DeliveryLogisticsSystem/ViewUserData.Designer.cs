@@ -88,6 +88,7 @@
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // panel6
             // 
@@ -128,6 +129,7 @@
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panel4
             // 
@@ -317,6 +319,7 @@
             this.UserProfileImage.Name = "UserProfileImage";
             this.UserProfileImage.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.UserProfileImage.Size = new System.Drawing.Size(200, 200);
+            this.UserProfileImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UserProfileImage.TabIndex = 1;
             this.UserProfileImage.TabStop = false;
             // 

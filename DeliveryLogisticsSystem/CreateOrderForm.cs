@@ -13,15 +13,19 @@ namespace DeliveryLogisticsSystem
         private string userId;
         private string userEmail;
         private string userRole;
+        private int orderId;
         private string pickupCoordinates = "";
         private string dropoffCoordinates = "";
 
-        public CreateOrderForm(string userId, string userEmail, string userRole)
+
+
+        public CreateOrderForm(string userId, string userEmail, string userRole, int orderId = 0)
         {
             InitializeComponent();
             this.userId = userId;
             this.userEmail = userEmail;
             this.userRole = userRole;
+            this.orderId = orderId; 
 
             txtEmail.Text = userEmail;
             txtEmail.ReadOnly = true;

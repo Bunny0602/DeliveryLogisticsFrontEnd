@@ -40,32 +40,32 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtPersonnel = new System.Windows.Forms.TextBox();
+            this.txtDropName = new System.Windows.Forms.TextBox();
+            this.txtDropLocation = new System.Windows.Forms.TextBox();
+            this.txtPickLocation = new System.Windows.Forms.TextBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -97,6 +97,7 @@
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // panel6
             // 
@@ -137,6 +138,7 @@
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panel4
             // 
@@ -177,13 +179,13 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(233)))));
-            this.panel7.Controls.Add(this.textBox8);
-            this.panel7.Controls.Add(this.textBox7);
-            this.panel7.Controls.Add(this.textBox6);
-            this.panel7.Controls.Add(this.textBox5);
-            this.panel7.Controls.Add(this.textBox4);
-            this.panel7.Controls.Add(this.textBox3);
-            this.panel7.Controls.Add(this.textBox2);
+            this.panel7.Controls.Add(this.txtStatus);
+            this.panel7.Controls.Add(this.txtPrice);
+            this.panel7.Controls.Add(this.txtPersonnel);
+            this.panel7.Controls.Add(this.txtDropName);
+            this.panel7.Controls.Add(this.txtDropLocation);
+            this.panel7.Controls.Add(this.txtPickLocation);
+            this.panel7.Controls.Add(this.txtFullName);
             this.panel7.Controls.Add(this.label9);
             this.panel7.Controls.Add(this.label8);
             this.panel7.Controls.Add(this.label7);
@@ -192,7 +194,7 @@
             this.panel7.Controls.Add(this.label2);
             this.panel7.Controls.Add(this.pictureBox4);
             this.panel7.Controls.Add(this.pictureBox3);
-            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.txtEmail);
             this.panel7.Controls.Add(this.label4);
             this.panel7.Controls.Add(this.label3);
             this.panel7.Controls.Add(this.pictureBox2);
@@ -203,19 +205,205 @@
             this.panel7.Size = new System.Drawing.Size(810, 424);
             this.panel7.TabIndex = 7;
             // 
-            // textBox1
+            // txtStatus
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(270, 77);
-            this.textBox1.MaximumSize = new System.Drawing.Size(210, 25);
-            this.textBox1.MinimumSize = new System.Drawing.Size(210, 25);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(210, 25);
-            this.textBox1.TabIndex = 8;
+            this.txtStatus.BackColor = System.Drawing.Color.White;
+            this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStatus.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(540, 360);
+            this.txtStatus.MaximumSize = new System.Drawing.Size(143, 25);
+            this.txtStatus.MinimumSize = new System.Drawing.Size(143, 25);
+            this.txtStatus.Multiline = true;
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.ReadOnly = true;
+            this.txtStatus.Size = new System.Drawing.Size(143, 25);
+            this.txtStatus.TabIndex = 23;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.BackColor = System.Drawing.Color.White;
+            this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(270, 360);
+            this.txtPrice.MaximumSize = new System.Drawing.Size(143, 25);
+            this.txtPrice.MinimumSize = new System.Drawing.Size(143, 25);
+            this.txtPrice.Multiline = true;
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.ReadOnly = true;
+            this.txtPrice.Size = new System.Drawing.Size(143, 25);
+            this.txtPrice.TabIndex = 22;
+            // 
+            // txtPersonnel
+            // 
+            this.txtPersonnel.BackColor = System.Drawing.Color.White;
+            this.txtPersonnel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPersonnel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtPersonnel.Location = new System.Drawing.Point(540, 283);
+            this.txtPersonnel.MaximumSize = new System.Drawing.Size(210, 25);
+            this.txtPersonnel.MinimumSize = new System.Drawing.Size(210, 25);
+            this.txtPersonnel.Multiline = true;
+            this.txtPersonnel.Name = "txtPersonnel";
+            this.txtPersonnel.ReadOnly = true;
+            this.txtPersonnel.Size = new System.Drawing.Size(210, 25);
+            this.txtPersonnel.TabIndex = 21;
+            // 
+            // txtDropName
+            // 
+            this.txtDropName.BackColor = System.Drawing.Color.White;
+            this.txtDropName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDropName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtDropName.Location = new System.Drawing.Point(270, 283);
+            this.txtDropName.MaximumSize = new System.Drawing.Size(210, 25);
+            this.txtDropName.MinimumSize = new System.Drawing.Size(210, 25);
+            this.txtDropName.Multiline = true;
+            this.txtDropName.Name = "txtDropName";
+            this.txtDropName.ReadOnly = true;
+            this.txtDropName.Size = new System.Drawing.Size(210, 25);
+            this.txtDropName.TabIndex = 20;
+            // 
+            // txtDropLocation
+            // 
+            this.txtDropLocation.BackColor = System.Drawing.Color.White;
+            this.txtDropLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDropLocation.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtDropLocation.Location = new System.Drawing.Point(540, 154);
+            this.txtDropLocation.MaximumSize = new System.Drawing.Size(210, 77);
+            this.txtDropLocation.MinimumSize = new System.Drawing.Size(210, 77);
+            this.txtDropLocation.Multiline = true;
+            this.txtDropLocation.Name = "txtDropLocation";
+            this.txtDropLocation.ReadOnly = true;
+            this.txtDropLocation.Size = new System.Drawing.Size(210, 77);
+            this.txtDropLocation.TabIndex = 19;
+            // 
+            // txtPickLocation
+            // 
+            this.txtPickLocation.BackColor = System.Drawing.Color.White;
+            this.txtPickLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPickLocation.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtPickLocation.Location = new System.Drawing.Point(270, 154);
+            this.txtPickLocation.MaximumSize = new System.Drawing.Size(210, 77);
+            this.txtPickLocation.MinimumSize = new System.Drawing.Size(210, 77);
+            this.txtPickLocation.Multiline = true;
+            this.txtPickLocation.Name = "txtPickLocation";
+            this.txtPickLocation.ReadOnly = true;
+            this.txtPickLocation.Size = new System.Drawing.Size(210, 77);
+            this.txtPickLocation.TabIndex = 18;
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.BackColor = System.Drawing.Color.White;
+            this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtFullName.Location = new System.Drawing.Point(540, 77);
+            this.txtFullName.MaximumSize = new System.Drawing.Size(210, 25);
+            this.txtFullName.MinimumSize = new System.Drawing.Size(210, 25);
+            this.txtFullName.Multiline = true;
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.ReadOnly = true;
+            this.txtFullName.Size = new System.Drawing.Size(210, 25);
+            this.txtFullName.TabIndex = 17;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.label9.Location = new System.Drawing.Point(535, 323);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 28);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Status";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.label8.Location = new System.Drawing.Point(265, 323);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 28);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Price";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.label7.Location = new System.Drawing.Point(535, 246);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(153, 28);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Personnel Name";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.label6.Location = new System.Drawing.Point(265, 246);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(149, 28);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Drop-Off Name";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.label5.Location = new System.Drawing.Point(535, 117);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(172, 28);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Drop-Off Location";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
+            this.label2.Location = new System.Drawing.Point(265, 117);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(161, 28);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Pick-Up Location";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(118, 273);
+            this.pictureBox4.MaximumSize = new System.Drawing.Size(100, 100);
+            this.pictureBox4.MinimumSize = new System.Drawing.Size(100, 100);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox4.TabIndex = 10;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(-41, 124);
+            this.pictureBox3.MaximumSize = new System.Drawing.Size(250, 250);
+            this.pictureBox3.MinimumSize = new System.Drawing.Size(250, 250);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(250, 250);
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(270, 77);
+            this.txtEmail.MaximumSize = new System.Drawing.Size(210, 25);
+            this.txtEmail.MinimumSize = new System.Drawing.Size(210, 25);
+            this.txtEmail.Multiline = true;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
+            this.txtEmail.Size = new System.Drawing.Size(210, 25);
+            this.txtEmail.TabIndex = 8;
             // 
             // label4
             // 
@@ -249,6 +437,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(35, 35);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label1
             // 
@@ -260,192 +449,6 @@
             this.label1.Size = new System.Drawing.Size(421, 54);
             this.label1.TabIndex = 6;
             this.label1.Text = "View Complate Orders";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-41, 124);
-            this.pictureBox3.MaximumSize = new System.Drawing.Size(250, 250);
-            this.pictureBox3.MinimumSize = new System.Drawing.Size(250, 250);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(250, 250);
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(118, 273);
-            this.pictureBox4.MaximumSize = new System.Drawing.Size(100, 100);
-            this.pictureBox4.MinimumSize = new System.Drawing.Size(100, 100);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.label2.Location = new System.Drawing.Point(265, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 28);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Pick-Up Location";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.label5.Location = new System.Drawing.Point(535, 117);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(172, 28);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Drop-Off Location";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.label6.Location = new System.Drawing.Point(265, 246);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(149, 28);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Drop-Off Name";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.label7.Location = new System.Drawing.Point(535, 246);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(153, 28);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Personnel Name";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.label8.Location = new System.Drawing.Point(265, 323);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 28);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Price";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
-            this.label9.Location = new System.Drawing.Point(535, 323);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 28);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Status";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(540, 77);
-            this.textBox2.MaximumSize = new System.Drawing.Size(210, 25);
-            this.textBox2.MinimumSize = new System.Drawing.Size(210, 25);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(210, 25);
-            this.textBox2.TabIndex = 17;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(270, 154);
-            this.textBox3.MaximumSize = new System.Drawing.Size(210, 77);
-            this.textBox3.MinimumSize = new System.Drawing.Size(210, 77);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(210, 77);
-            this.textBox3.TabIndex = 18;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(540, 154);
-            this.textBox4.MaximumSize = new System.Drawing.Size(210, 77);
-            this.textBox4.MinimumSize = new System.Drawing.Size(210, 77);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(210, 77);
-            this.textBox4.TabIndex = 19;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(270, 283);
-            this.textBox5.MaximumSize = new System.Drawing.Size(210, 25);
-            this.textBox5.MinimumSize = new System.Drawing.Size(210, 25);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(210, 25);
-            this.textBox5.TabIndex = 20;
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(540, 283);
-            this.textBox6.MaximumSize = new System.Drawing.Size(210, 25);
-            this.textBox6.MinimumSize = new System.Drawing.Size(210, 25);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(210, 25);
-            this.textBox6.TabIndex = 21;
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.Color.White;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(270, 360);
-            this.textBox7.MaximumSize = new System.Drawing.Size(143, 25);
-            this.textBox7.MinimumSize = new System.Drawing.Size(143, 25);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(143, 25);
-            this.textBox7.TabIndex = 22;
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.Color.White;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(540, 360);
-            this.textBox8.MaximumSize = new System.Drawing.Size(143, 25);
-            this.textBox8.MinimumSize = new System.Drawing.Size(143, 25);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(143, 25);
-            this.textBox8.TabIndex = 23;
             // 
             // ViewCompleOrderForm
             // 
@@ -467,9 +470,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -490,7 +493,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -499,13 +502,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtStatus;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtPersonnel;
+        private System.Windows.Forms.TextBox txtDropName;
+        private System.Windows.Forms.TextBox txtDropLocation;
+        private System.Windows.Forms.TextBox txtPickLocation;
+        private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
     }

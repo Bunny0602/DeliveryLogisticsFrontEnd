@@ -41,17 +41,17 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.btndelete = new System.Windows.Forms.PictureBox();
+            this.btnViewOrder = new System.Windows.Forms.PictureBox();
+            this.btnEdit = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.dataUserOrder = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btndelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnViewOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataUserOrder)).BeginInit();
             this.SuspendLayout();
@@ -99,6 +99,7 @@
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click_1);
             // 
             // panel6
             // 
@@ -188,38 +189,43 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox10
+            // btndelete
             // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(1106, 59);
-            this.pictureBox10.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox10.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox10.TabIndex = 9;
-            this.pictureBox10.TabStop = false;
+            this.btndelete.Image = ((System.Drawing.Image)(resources.GetObject("btndelete.Image")));
+            this.btndelete.Location = new System.Drawing.Point(1106, 59);
+            this.btndelete.MaximumSize = new System.Drawing.Size(28, 28);
+            this.btndelete.MinimumSize = new System.Drawing.Size(28, 28);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(28, 28);
+            this.btndelete.TabIndex = 9;
+            this.btndelete.TabStop = false;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
-            // pictureBox7
+            // btnViewOrder
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(1063, 56);
-            this.pictureBox7.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox7.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox7.TabIndex = 8;
-            this.pictureBox7.TabStop = false;
+            this.btnViewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnViewOrder.Image")));
+            this.btnViewOrder.Location = new System.Drawing.Point(1063, 59);
+            this.btnViewOrder.MaximumSize = new System.Drawing.Size(28, 28);
+            this.btnViewOrder.MinimumSize = new System.Drawing.Size(28, 28);
+            this.btnViewOrder.Name = "btnViewOrder";
+            this.btnViewOrder.Size = new System.Drawing.Size(28, 28);
+            this.btnViewOrder.TabIndex = 8;
+            this.btnViewOrder.TabStop = false;
+            this.btnViewOrder.Click += new System.EventHandler(this.btnViewOrder_Click);
             // 
-            // pictureBox16
+            // btnEdit
             // 
-            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(1149, 59);
-            this.pictureBox16.MaximumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox16.MinimumSize = new System.Drawing.Size(28, 28);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox16.TabIndex = 15;
-            this.pictureBox16.TabStop = false;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.Location = new System.Drawing.Point(1149, 59);
+            this.btnEdit.MaximumSize = new System.Drawing.Size(28, 28);
+            this.btnEdit.MinimumSize = new System.Drawing.Size(28, 28);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(28, 28);
+            this.btnEdit.TabIndex = 15;
+            this.btnEdit.TabStop = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // pictureBox3
             // 
@@ -254,9 +260,9 @@
             this.ClientSize = new System.Drawing.Size(1178, 584);
             this.Controls.Add(this.dataUserOrder);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox16);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btndelete);
+            this.Controls.Add(this.btnViewOrder);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
@@ -269,9 +275,9 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btndelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnViewOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataUserOrder)).EndInit();
             this.ResumeLayout(false);
@@ -292,9 +298,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.PictureBox btndelete;
+        private System.Windows.Forms.PictureBox btnViewOrder;
+        private System.Windows.Forms.PictureBox btnEdit;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.DataGridView dataUserOrder;
     }

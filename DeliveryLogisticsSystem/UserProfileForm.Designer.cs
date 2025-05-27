@@ -101,6 +101,7 @@
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // panel6
             // 
@@ -121,6 +122,7 @@
             this.btnCreateOrder.TabIndex = 2;
             this.btnCreateOrder.Text = "Create Order";
             this.btnCreateOrder.UseVisualStyleBackColor = false;
+            this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
             // 
             // panel5
             // 

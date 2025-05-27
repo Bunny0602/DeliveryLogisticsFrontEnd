@@ -11,10 +11,6 @@ using MySql.Data.MySqlClient;
 
 namespace DeliveryLogisticsSystem
 {
-    // AdminDashboard is the main form for admin users to manage users and personnel in the delivery logistics system.
-    // It provides functionality to view, refresh, add, edit, and delete users and personnel records from the database.
-    // The form interacts with a MySQL database using the DataBase helper class and displays data in DataGridView controls.
-    // Each button click event is handled to perform the corresponding CRUD operation and update the UI accordingly.
     public partial class AdminDashboard : Form
     {
         private string userId;
@@ -41,8 +37,7 @@ namespace DeliveryLogisticsSystem
             LoadTotalMoney();
         }
 
-        // Loads all non-admin users from the database and displays them in the dataUser DataGridView.
-        private void LoadUserData()
+        private void LoadUserData(string searchQuery = "")
         {
             DataBase db = new DataBase();
             using (MySqlConnection conn = db.GetConnection())
@@ -50,8 +45,18 @@ namespace DeliveryLogisticsSystem
                 try
                 {
                     conn.Open();
-                    string query = "SELECT user_id AS 'User_ID', email AS 'Email', fullname AS 'Full Name', address AS 'Address', phonenumber AS 'Phone Number', role AS 'Role' FROM users WHERE role <> 'admin'";
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    string query = @"
+                        SELECT user_id AS 'User_ID', email AS 'Email', fullname AS 'Full Name', 
+                               address AS 'Address', phonenumber AS 'Phone Number', role AS 'Role'
+                        FROM users 
+                        WHERE role <> 'admin'
+                          AND (email LIKE @search OR fullname LIKE @search OR phonenumber LIKE @search 
+                               OR @search = '')";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@search", "%" + searchQuery + "%");
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable usertable = new DataTable();
                     adapter.Fill(usertable);
                     dataUser.DataSource = usertable;
@@ -63,8 +68,13 @@ namespace DeliveryLogisticsSystem
             }
         }
 
+        private void txtSearchUser_TextChanged(object sender, EventArgs e)
+        {
+            LoadUserData(txtSearchUser.Text.Trim());
+        }
+
         // Loads all personnel records from the database and displays them in the dataPersonnel DataGridView.
-        private void LoadPersonnelData()
+        private void LoadPersonnelData(string searchQuery = "")
         {
             DataBase db = new DataBase();
             using (MySqlConnection conn = db.GetConnection())
@@ -72,8 +82,17 @@ namespace DeliveryLogisticsSystem
                 try
                 {
                     conn.Open();
-                    string query = "SELECT personnel_id AS 'Personnel ID', email AS 'Email', fullname AS 'Full Name', address AS 'Address', phonenumber AS 'Phone Number', status AS 'Status', role AS 'Role' FROM personnel";
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                    string query = @"
+                        SELECT personnel_id AS 'Personnel ID', email AS 'Email', fullname AS 'Full Name', 
+                               address AS 'Address', phonenumber AS 'Phone Number', status AS 'Status', role AS 'Role' 
+                        FROM personnel 
+                        WHERE email LIKE @search OR fullname LIKE @search OR phonenumber LIKE @search 
+                              OR @search = ''";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@search", "%" + searchQuery + "%");
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable personTable = new DataTable();
                     adapter.Fill(personTable);
                     dataPersonnel.DataSource = personTable;
@@ -85,8 +104,12 @@ namespace DeliveryLogisticsSystem
             }
         }
 
+        private void txtPersonnel_TextChanged(object sender, EventArgs e)
+        {
+            LoadPersonnelData(txtPersonnel.Text.Trim());
+        }
 
-        private void LoadOrderData()
+        private void LoadOrderData(string searchQuery = "")
         {
             DataBase db = new DataBase();
             using (MySqlConnection conn = db.GetConnection())
@@ -94,55 +117,69 @@ namespace DeliveryLogisticsSystem
                 try
                 {
                     conn.Open();
+                    string query = @"
+                        SELECT
+                            orders.order_id,
+                            users.email, 
+                            orders.name, 
+                            orders.pickup_location, 
+                            orders.dropoff_name, 
+                            orders.dropoff_location, 
+                            orders.personnelName, 
+                            orders.phonenumber, 
+                            orders.price, 
+                            orders.status
+                        FROM orders
+                        LEFT JOIN users ON orders.user_id = users.user_id
+                        WHERE users.email LIKE @search OR orders.name LIKE @search 
+                              OR orders.pickup_location LIKE @search OR orders.dropoff_name LIKE @search
+                              OR orders.dropoff_location LIKE @search OR orders.personnelName LIKE @search 
+                              OR @search = ''";
 
-                    string query = @"SELECT
-                                    orders.order_id,
-                                    users.email, 
-                                    orders.name, 
-                                    orders.pickup_location, 
-                                    orders.dropoff_name, 
-                                    orders.dropoff_location, 
-                                    orders.personnelName, 
-                                    orders.phonenumber, 
-                                    orders.price, 
-                                    orders.status
-                                    FROM orders
-                                    LEFT JOIN users ON orders.user_id = users.user_id";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@search", "%" + searchQuery + "%");
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
-                    adapter.SelectCommand.Parameters.AddWithValue("@userId", userId);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable orderTable = new DataTable();
                     adapter.Fill(orderTable);
 
                     dataOrder.DataSource = orderTable;
 
-                    dataOrder.Columns[0].HeaderText = "Order ID";
-                    dataOrder.Columns[1].HeaderText = "User Email";
-                    dataOrder.Columns[2].HeaderText = "Name";
-                    dataOrder.Columns[3].HeaderText = "Pickup Location";
-                    dataOrder.Columns[4].HeaderText = "Dropoff Name";
-                    dataOrder.Columns[5].HeaderText = "Dropoff Location";
-                    dataOrder.Columns[6].HeaderText = "Personnel Name";
-                    dataOrder.Columns[7].HeaderText = "Phone Number";
-                    dataOrder.Columns[8].HeaderText = "Price";
-                    dataOrder.Columns[9].HeaderText = "Status";
+                    if (orderTable.Columns.Count >= 10)
+                    {
+                        dataOrder.Columns[0].HeaderText = "Order ID";
+                        dataOrder.Columns[1].HeaderText = "User Email";
+                        dataOrder.Columns[2].HeaderText = "Name";
+                        dataOrder.Columns[3].HeaderText = "Pickup Location";
+                        dataOrder.Columns[4].HeaderText = "Dropoff Name";
+                        dataOrder.Columns[5].HeaderText = "Dropoff Location";
+                        dataOrder.Columns[6].HeaderText = "Personnel Name";
+                        dataOrder.Columns[7].HeaderText = "Phone Number";
+                        dataOrder.Columns[8].HeaderText = "Price";
+                        dataOrder.Columns[9].HeaderText = "Status";
 
-                    dataOrder.Columns[0].Width = 60;
-                    dataOrder.Columns[1].Width = 150;
-                    dataOrder.Columns[2].Width = 150;
-                    dataOrder.Columns[3].Width = 150;
-                    dataOrder.Columns[4].Width = 150;
-                    dataOrder.Columns[5].Width = 150;
-                    dataOrder.Columns[6].Width = 150;
-                    dataOrder.Columns[7].Width = 150;
-                    dataOrder.Columns[8].Width = 80;
-                    dataOrder.Columns[9].Width = 100;
+                        dataOrder.Columns[0].Width = 60;
+                        dataOrder.Columns[1].Width = 150;
+                        dataOrder.Columns[2].Width = 150;
+                        dataOrder.Columns[3].Width = 150;
+                        dataOrder.Columns[4].Width = 150;
+                        dataOrder.Columns[5].Width = 150;
+                        dataOrder.Columns[6].Width = 150;
+                        dataOrder.Columns[7].Width = 150;
+                        dataOrder.Columns[8].Width = 80;
+                        dataOrder.Columns[9].Width = 100;
+                    }
                 }
                 catch (MySqlException ex)
                 {
                     MessageBox.Show("Error loading order data: " + ex.Message);
                 }
             }
+        }
+
+        private void txtSearchOrder_TextChanged(object sender, EventArgs e)
+        {
+            LoadOrderData(txtSearchOrder.Text.Trim());
         }
 
         // Refreshes the user data when the refresh button is clicked.
@@ -260,7 +297,6 @@ namespace DeliveryLogisticsSystem
             }
         }
 
-        // Deletes the selected personnel after confirmation.
         private void btnDeletePersonnel_Click(object sender, EventArgs e)
         {
             if (dataPersonnel.SelectedRows.Count > 0)
@@ -279,7 +315,6 @@ namespace DeliveryLogisticsSystem
             }
         }
 
-        // Helper method to delete a personnel from the database.
         private void DeletePersonnel(string personnelId)
         {
             DataBase db = new DataBase();
@@ -375,6 +410,39 @@ namespace DeliveryLogisticsSystem
             createOrderForm.Show();
             this.Hide();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+
+            this.Close();
+        }
+
+        private void btnViewCompleteOrder_Click(object sender, EventArgs e)
+        {
+            if (dataOrder.SelectedRows.Count > 0)
+            {
+                string status = dataOrder.SelectedRows[0].Cells["status"].Value.ToString();
+                string orderId = dataOrder.SelectedRows[0].Cells["order_id"].Value.ToString();
+
+                if (status.Equals("Delivered", StringComparison.OrdinalIgnoreCase))
+                {
+                    
+                    ViewCompleOrderForm viewOrderComplete = new ViewCompleOrderForm(orderId);
+                    viewOrderComplete.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("This order is not yet delivered.", "Cannot View", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an order to view.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
     }
 }
 
